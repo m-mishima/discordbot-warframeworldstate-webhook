@@ -1,0 +1,7 @@
+// warframe のサーバから送られてくる、VoidTier定数と、その翻訳文字列
+{
+    "VoidT1": "LITH",
+    "VoidT2": "MESO",
+    "VoidT3": "NEO",
+    "VoidT4": "AXI"
+}

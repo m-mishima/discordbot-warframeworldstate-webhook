@@ -1,0 +1,57 @@
+// いい亀裂 で表示する条件の設定
+[
+    // warframe のサーバから送られてくる定数で設定する場合
+    // VOID確保 を条件にする場合
+    {
+	// 並べた条件は AND条件
+        "Region": 15,
+        "MissionType": "MT_CAPTURE",
+	// action: accept に到達すると、いい亀裂として認められる
+        "action": "accept"
+    },
+    // 翻訳後の文字列で設定する場合
+    {
+        "Region": "VOID",
+        "MissionType": "確保",
+        "action": "accept"
+    },
+    // どちらも同じ動作をする
+
+    // VOID掃滅
+    {
+        "Region": 15,
+        "MissionType": "MT_EXTERMINATION",
+        "action": "accept"
+    },
+    {
+        "Region": "VOID",
+        "MissionType": "掃滅",
+        "action": "accept"
+    },
+
+    // 地球確保
+    {
+        "Region": 3,
+        "MissionType": "MT_CAPTURE",
+        "action": "accept"
+    },
+    {
+        "Region": "地球",
+        "MissionType": "確保",
+        "action": "accept"
+    },
+
+    // 地球掃滅
+    {
+        "Region": 3,
+        "MissionType": "MT_EXTERMINATION",
+        "action": "accept"
+    },
+    {
+        "Region": "地球",
+        "MissionType": "掃滅",
+        "action": "accept"
+    }
+
+    // TierやSolnodeなどでも設定可能
+]

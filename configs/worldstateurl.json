@@ -1,0 +1,9 @@
+// データの取得先URL
+// pc版
+//"http:\/\/content.warframe.com\/dynamic\/worldState.php"
+// ps4版
+//"http:\/\/content.ps4.warframe.com\/dynamic\/worldState.php"
+// xboxone版
+//"http:\/\/content.xb1.warframe.com\/dynamic\/worldState.php"
+// switch版
+"http:\/\/content.swi.warframe.com\/dynamic\/worldState.php"
