@@ -1,6 +1,7 @@
 // warframe のサーバから送られてくる、ミッションタイプ定数と、その翻訳文字列
 {
     "MT_ARENA":          "アリーナ",
+    "MT_ARTIFACT":       "分裂",
     "MT_ASSAULT":        "突撃",
     "MT_ASSASSINATION":  "抹殺",
     "MT_CAPTURE":        "確保",
