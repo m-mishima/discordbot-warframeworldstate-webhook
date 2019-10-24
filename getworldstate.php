@@ -7,7 +7,9 @@ function getworldstate( $url ) {
     curl_setopt_array( $curl, array(
         CURLOPT_URL => $url,
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_FAILONERROR => false
+        CURLOPT_FAILONERROR => false,
+        CURLOPT_CONNECTTIMEOUT => 5,
+        CURLOPT_TIMEOUT => 10
     ) );
 
     $res = curl_exec( $curl );

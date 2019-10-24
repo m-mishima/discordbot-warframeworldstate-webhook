@@ -20,6 +20,8 @@ function sendmessageviawebhook( $webhookurl, $text ) {
             CURLOPT_URL => $v,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FAILONERROR => false,
+            CURLOPT_CONNECTTIMEOUT => 5,
+            CURLOPT_TIMEOUT => 10,
             CURLOPT_HTTPHEADER => $httpheader,
             CURLOPT_POST => true,
             CURLOPT_POSTFIELDS => $json
