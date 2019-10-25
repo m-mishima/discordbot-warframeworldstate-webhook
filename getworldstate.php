@@ -15,11 +15,21 @@ function getworldstate( $url ) {
     $res = curl_exec( $curl );
     $httpresultcode = curl_getinfo( $curl, CURLINFO_RESPONSE_CODE );
 
+    $en = curl_errno( $curl );
+    $em = curl_error( $curl );
+
     curl_close( $curl );
 
-    if ( $res === false ) return false;	// curl自体のエラー
-    if ( $httpresultcode != 200 ) return false;	// http 404, 403 etc
-
+    if ( $res === false ) {	// curl自体のエラー
+        echo "curl error code = " . $en . PHP_EOL;
+        echo $em . PHP_EOL;
+        return false;
+    }
+    if ( $httpresultcode != 200 ) {	// http 404, 403 etc
+        echo "http result = " . $httpresultcode . PHP_EOL;
+        echo $res . PHP_EOL;
+        return false;
+    }
     $arr = json_decode( $res, true );
 
     return $arr;
