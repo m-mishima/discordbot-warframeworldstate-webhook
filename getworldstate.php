@@ -151,6 +151,24 @@ function parse_alert( $alert ) {
                 $reward .= $v1 . PHP_EOL;
             }
             break;
+        case 'countedItems':
+            foreach( $v as $v1 ) {
+                $in = ''; $ic = 0;
+                foreach( $v1 as $k2 => $v2 ) {
+                    switch( $k2 ) {
+                    case 'ItemType':
+                        $in = $v2;
+                        break;
+                    case 'ItemCount':
+                        $ic = $v2;
+                        break;
+                    }
+                }
+                if ( ( $in != '' ) && ( $ic != 0 ) ) {
+                    $reward .= $ic . 'x ' . $in . PHP_EOL;
+                }
+            }
+            break;
         default:
             break;
         }
@@ -166,6 +184,38 @@ function parse_alert( $alert ) {
 
     $retstr .= sprintf( "%s %s\n", $node, $mission );
     $retstr .= $reward . PHP_EOL;
+
+    return $retstr;
+}
+
+function parse_baro( $baro ) {
+    global $timezone;
+
+    date_default_timezone_set( $timezone );
+
+    $retstr = '';
+
+    $datefrom  = $baro['Activation']['$date']['$numberLong'];
+    $dateend   = $baro['Expiry']['$date']['$numberLong'];
+    $character = $baro['Character'];	// Baro'Ki Teel
+    $node      = $baro['Node'];
+
+    $s = date('Y-m-d H:i:s', $datefrom / 1000 );
+    $e = date('Y-m-d H:i:s', $dateend / 1000 );
+
+    $retstr .= sprintf( "%s %s %s～%s\n", $character, $node, $s, $e );
+
+    if ( isset( $baro['Manifest'] ) ) {
+        $itemlist = $baro['Manifest'];
+        foreach( $itemlist as $v2 ) {
+            $name    = $v2['ItemType'];
+            $ducats  = $v2['PrimePrice'];
+            $credits = $v2['RegularPrice'];
+
+            $retstr .= sprintf( "%dducats %dcredits %s\n", $ducats, $credits, $name );
+
+        }
+    }
 
     return $retstr;
 }

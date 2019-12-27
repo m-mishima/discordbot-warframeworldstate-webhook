@@ -12,7 +12,8 @@ function readconfig() {
                        'worldstateurl',
                        'webhookurl_sortie',
                        'webhookurl_fissure',
-                       'webhookurl_nicefissure'
+                       'webhookurl_nicefissure',
+                       'webhookurl_devel'
     );
 
     foreach ( $readlist as $v ) {

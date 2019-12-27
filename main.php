@@ -10,12 +10,14 @@ $eventids_old = array();	// イベント更新チェック用の、旧イベン�
 function main() {
 
     global $worldstateurl, $eventids_old;
-    global $webhookurl_sortie, $webhookurl_fissure, $webhookurl_nicefissure;
+    global $webhookurl_sortie, $webhookurl_fissure, $webhookurl_nicefissure, $webhookurl_devel;
     $eventids_new = array();
 
     $sortie_text = '';
     $fissure_text   = '';
     $nicefissure_text   = '';
+    $alert_text = '';
+    $baro_text = '';
 
     readconfig();
 
@@ -51,6 +53,26 @@ function main() {
         }
     }
 
+    foreach( $json['Alerts'] as $v ) { // アラート
+        if ( isset( $v['_id']['$oid'] ) ) {
+            $oid = $v['_id']['$oid'];
+            if ( !isset( $eventids_old[ $oid ] ) ) {
+                $alert_text .= parse_alert( $v );
+            }
+            $eventids_new[ $oid ] = 'checked';
+        }
+    }
+
+    foreach( $json['VoidTraders'] as $v ) {	// バロ吉
+        if ( isset( $v['_id']['$oid'] ) ) {
+            $oid = $v['_id']['$oid'];
+            if ( !isset( $eventids_old[ $oid ] ) ) {
+                $baro_text .= parse_baro( $v );
+            }
+            $eventids_new[ $oid ] = 'checked';
+        }
+    }
+
     $eventids_old = $eventids_new;
 
     if ( $sortie_text != '' ) {
@@ -64,6 +86,15 @@ function main() {
     if ( $nicefissure_text != '' ) {
         sendmessageviawebhook( $webhookurl_nicefissure, $nicefissure_text );
         echo $nicefissure_text . PHP_EOL;
+    }
+
+    if ( $alert_text != '' ) {
+        sendmessageviawebhook( $webhookurl_devel, $alert_text );
+        echo $alert_text . PHP_EOL;
+    }
+    if ( $baro_text != '' ) {
+        sendmessageviawebhook( $webhookurl_devel, $baro_text );
+        echo $baro_text . PHP_EOL;
     }
 
 }

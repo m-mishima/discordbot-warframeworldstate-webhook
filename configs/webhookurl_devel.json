@@ -1,0 +1,7 @@
+// 開発用情報の送り先
+// develop info send url
+// put your discord channel webhook url
+// require '/' to '\/' escape sequence
+[
+    "https:\/\/discordapp.com\/api\/webhooks\/999999999999999999\/********************************************************************"
+]

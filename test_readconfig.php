@@ -14,6 +14,7 @@ $worldstateurl = null;          $worldstateurl_filedate = null;
 $webhookurl_sortie = null;      $webhookurl_sortie_filedate = null;
 $webhookurl_fissure = null;     $webhookurl_fissure_filedate = null;
 $webhookurl_nicefissure = null; $webhookurl_nicefissure_filedate = null;
+$webhookurl_devel = null;       $webhookurl_nicefissure_devel = null;
 
 readconfig();
 
@@ -41,5 +42,7 @@ readconfig();
 //var_dump( $webhookurl_fissure_filedate );
 //var_dump( $webhookurl_nicefissure );
 //var_dump( $webhookurl_nicefissure_filedate );
+//var_dump( $webhookurl_devel );
+//var_dump( $webhookurl_devel_filedate );
 
 ?>

@@ -43,10 +43,15 @@ function main() {
         $alert_text .= parse_alert( $v );
     }
 
+    foreach( $json['VoidTraders'] as $v ) {	// バロ吉
+        $baro_text .= parse_baro( $v );
+    }
+
     echo $sortie_text . PHP_EOL;
     echo $fissure_text . PHP_EOL;
     echo $nicefissure_text . PHP_EOL;
     echo $alert_text . PHP_EOL;
+    echo $baro_text . PHP_EOL;
 
 }
 
