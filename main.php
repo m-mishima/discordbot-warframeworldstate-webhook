@@ -65,7 +65,8 @@ function main() {
 
     foreach( $json['VoidTraders'] as $v ) {	// バロ吉
         if ( isset( $v['_id']['$oid'] ) ) {
-            $oid = $v['_id']['$oid'];
+            if ( isset( $v['Manifest'] ) ) $state = 'arrived'; else $state = 'unreach';
+            $oid = $v['_id']['$oid'] . $state;
             if ( !isset( $eventids_old[ $oid ] ) ) {
                 $baro_text .= parse_baro( $v );
             }

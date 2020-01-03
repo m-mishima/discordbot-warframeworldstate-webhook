@@ -14,7 +14,8 @@ $worldstateurl = null;          $worldstateurl_filedate = null;
 $webhookurl_sortie = null;      $webhookurl_sortie_filedate = null;
 $webhookurl_fissure = null;     $webhookurl_fissure_filedate = null;
 $webhookurl_nicefissure = null; $webhookurl_nicefissure_filedate = null;
-$webhookurl_devel = null;       $webhookurl_nicefissure_devel = null;
+$webhookurl_devel = null;       $webhookurl_devel_filedate = null;
+$itemtranslatelist = null;      $itemtranslatelist_filedate = null;
 
 readconfig();
 
@@ -44,5 +45,7 @@ readconfig();
 //var_dump( $webhookurl_nicefissure_filedate );
 //var_dump( $webhookurl_devel );
 //var_dump( $webhookurl_devel_filedate );
+//var_dump( $itemtranslatelist );
+//var_dump( $itemtranslatelist_filedate );
 
 ?>

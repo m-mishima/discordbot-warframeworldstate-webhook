@@ -121,7 +121,7 @@ function parse_sortie( $sortie ) {
 }
 
 function parse_alert( $alert ) {
-    global $missiontypelist, $solnodelist, $timezone;
+    global $missiontypelist, $solnodelist, $itemtranslatelist, $timezone;
 
     date_default_timezone_set( $timezone );
 
@@ -135,6 +135,9 @@ function parse_alert( $alert ) {
     $e = date('Y-m-d H:i:s', $dateend / 1000 );
 
     $alerttitle = $alert['MissionInfo']['descText'];
+    if ( isset( $itemtranslatelist[$alerttitle] ) ) {
+        $alerttitle = $itemtranslatelist[$alerttitle];
+    }
 
     $retstr .= sprintf( "%s %s～%s\n", $alerttitle, $s, $e );
 
@@ -148,7 +151,11 @@ function parse_alert( $alert ) {
             break;
         case 'items':
             foreach( $v as $v1 ) {
-                $reward .= $v1 . PHP_EOL;
+                $in = $v1;
+                if ( isset( $itemtranslatelist[$in] ) ) {
+                    $in = $itemtranslatelist[$in];
+                }
+                $reward .= $in . PHP_EOL;
             }
             break;
         case 'countedItems':
@@ -158,6 +165,9 @@ function parse_alert( $alert ) {
                     switch( $k2 ) {
                     case 'ItemType':
                         $in = $v2;
+                        if ( isset( $itemtranslatelist[$in] ) ) {
+                            $in = $itemtranslatelist[$in];
+                        }
                         break;
                     case 'ItemCount':
                         $ic = $v2;
@@ -189,7 +199,7 @@ function parse_alert( $alert ) {
 }
 
 function parse_baro( $baro ) {
-    global $timezone;
+    global $itemtranslatelist, $timezone;
 
     date_default_timezone_set( $timezone );
 
@@ -209,6 +219,9 @@ function parse_baro( $baro ) {
         $itemlist = $baro['Manifest'];
         foreach( $itemlist as $v2 ) {
             $name    = $v2['ItemType'];
+            if ( isset( $itemtranslatelist[$name] ) ) {
+                $name = $itemtranslatelist[$name];
+            }
             $ducats  = $v2['PrimePrice'];
             $credits = $v2['RegularPrice'];
 
