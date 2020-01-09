@@ -29,19 +29,19 @@ function main() {
     }
 
     foreach( $json['Sorties'] as $v ) {	// ソーティ
+        $update_check_hash = 'sortie' . hash( 'sha256', json_encode( $v ) );
         if ( isset( $v['_id']['$oid'] ) ) {
-            $oid = $v['_id']['$oid'];
-            if ( !isset( $eventids_old[ $oid ] ) ) {
+            if ( !isset( $eventids_old[ $update_check_hash ] ) ) {
                 $sortie_text .= parse_sortie( $v );
             }
-            $eventids_new[ $oid ] = 'checked';
+            $eventids_new[ $update_check_hash ] = 'checked';
         }
     }
 
     foreach( $json['ActiveMissions'] as $v ) { // 亀裂ミッション
+        $update_check_hash = 'fissure' . hash( 'sha256', json_encode( $v ) );
         if ( isset( $v['_id']['$oid'] ) ) {
-            $oid = $v['_id']['$oid'];
-            if ( !isset( $eventids_old[ $oid ] ) ) {
+            if ( !isset( $eventids_old[ $update_check_hash ] ) ) {
                 $fissure_text .= parse_voidfissure( $v );
 
                 $action = fissurefilter( $v );
@@ -49,28 +49,27 @@ function main() {
                     $nicefissure_text .= parse_voidfissure( $v );
                 }
             }
-            $eventids_new[ $oid ] = 'checked';
+            $eventids_new[ $update_check_hash ] = 'checked';
         }
     }
 
     foreach( $json['Alerts'] as $v ) { // アラート
+        $update_check_hash = 'alert' . hash( 'sha256', json_encode( $v ) );
         if ( isset( $v['_id']['$oid'] ) ) {
-            $oid = $v['_id']['$oid'];
-            if ( !isset( $eventids_old[ $oid ] ) ) {
+            if ( !isset( $eventids_old[ $update_check_hash ] ) ) {
                 $alert_text .= parse_alert( $v );
             }
-            $eventids_new[ $oid ] = 'checked';
+            $eventids_new[ $update_check_hash ] = 'checked';
         }
     }
 
     foreach( $json['VoidTraders'] as $v ) {	// バロ吉
+        $update_check_hash = 'baro' . hash( 'sha256', json_encode( $v ) );
         if ( isset( $v['_id']['$oid'] ) ) {
-            if ( isset( $v['Manifest'] ) ) $state = 'arrived'; else $state = 'unreach';
-            $oid = $v['_id']['$oid'] . $state;
-            if ( !isset( $eventids_old[ $oid ] ) ) {
+            if ( !isset( $eventids_old[ $update_check_hash ] ) ) {
                 $baro_text .= parse_baro( $v );
             }
-            $eventids_new[ $oid ] = 'checked';
+            $eventids_new[ $update_check_hash ] = 'checked';
         }
     }
 
