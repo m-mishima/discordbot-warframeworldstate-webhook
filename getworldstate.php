@@ -233,4 +233,44 @@ function parse_baro( $baro ) {
     return $retstr;
 }
 
+function parse_nightwave( $nightwave ) {
+    global $nightwavetranslatelist, $timezone;
+
+    date_default_timezone_set( $timezone );
+
+    $retstr = '';
+
+    $datefrom  = $nightwave['Activation']['$date']['$numberLong']; // nightwave season begin
+    $dateend   = $nightwave['Expiry']['$date']['$numberLong'];     // nightwave season end
+    $tag       = $nightwave['AffiliationTag']; // ???
+    $season    = $nightwave['Season']; // season
+    $phase     = $nightwave['Phase'];  // phase
+    $params    = $nightwave['Params']; // params
+
+    $s = date('Y-m-d H:i:s', $datefrom / 1000 );
+    $e = date('Y-m-d H:i:s', $dateend / 1000 );
+
+    $retstr .= sprintf( "nightwave season%d phase%d %s～%s\n", $season, $phase, $s, $e );
+
+    if ( isset( $nightwave['ActiveChallenges'] ) ) {
+        $challengelist = $nightwave['ActiveChallenges'];
+        foreach( $challengelist as $v2 ) {
+            $oid           = $v2['_id']['$oid'];
+            $dailyflg      = false;
+            if ( isset( $v2['Daily'] ) ) $dailyflg = $v2['Daily'];
+            $challengefrom = $v2['Activation']['$date']['$numberLong'];
+            $challengeend  = $v2['Expiry']['$date']['$numberLong'];
+            $challenge     = $v2['Challenge'];
+            if ( isset( $nightwavetranslatelist[ $challenge ] ) ) {
+                $challenge = $nightwavetranslatelist[ $challenge ];
+            }
+
+            $retstr .= sprintf( "%s %s\n", ( $dailyflg ? '日' : '週' ), $challenge );
+
+        }
+    }
+
+    return $retstr;
+}
+
 ?>

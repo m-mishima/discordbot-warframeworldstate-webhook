@@ -18,6 +18,7 @@ function main() {
     $nicefissure_text   = '';
     $alert_text = '';
     $baro_text = '';
+    $nightwave_text = '';
 
     readconfig();
 
@@ -73,6 +74,15 @@ function main() {
         }
     }
 
+    if ( isset( $json['SeasonInfo'] ) ) {   // NightWave
+        $update_check_hash = 'nightwave' . hash( 'sha256', json_encode( $json['SeasonInfo'] ) );
+        if ( !isset( $eventids_old[ $update_check_hash ] ) ) {
+            $nightwave_text .= parse_nightwave( $json['SeasonInfo'] );
+        }
+        $eventids_new[ $update_check_hash ] = 'checked';
+    }
+
+
     $eventids_old = $eventids_new;
 
     if ( $sortie_text != '' ) {
@@ -95,6 +105,10 @@ function main() {
     if ( $baro_text != '' ) {
         sendmessageviawebhook( $webhookurl_devel, $baro_text );
         echo $baro_text . PHP_EOL;
+    }
+    if ( $nightwave_text != '' ) {
+        sendmessageviawebhook( $webhookurl_devel, $nightwave_text );
+        echo $nightwave_text . PHP_EOL;
     }
 
 }

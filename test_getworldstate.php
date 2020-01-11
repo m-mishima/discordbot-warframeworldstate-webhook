@@ -14,6 +14,8 @@ function main() {
     $fissure_text   = '';
     $nicefissure_text   = '';
     $alert_text = '';
+    $baro_text = '';
+    $nightwave_text = '';
 
     readconfig();
 
@@ -47,11 +49,16 @@ function main() {
         $baro_text .= parse_baro( $v );
     }
 
+    if ( isset( $json['SeasonInfo'] ) ) {	// NightWave
+        $nightwave_text .= parse_nightwave( $json['SeasonInfo'] );
+    }
+
     echo $sortie_text . PHP_EOL;
     echo $fissure_text . PHP_EOL;
     echo $nicefissure_text . PHP_EOL;
     echo $alert_text . PHP_EOL;
     echo $baro_text . PHP_EOL;
+    echo $nightwave_text . PHP_EOL;
 
 }
 

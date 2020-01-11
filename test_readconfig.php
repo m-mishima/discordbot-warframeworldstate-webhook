@@ -16,6 +16,7 @@ $webhookurl_fissure = null;     $webhookurl_fissure_filedate = null;
 $webhookurl_nicefissure = null; $webhookurl_nicefissure_filedate = null;
 $webhookurl_devel = null;       $webhookurl_devel_filedate = null;
 $itemtranslatelist = null;      $itemtranslatelist_filedate = null;
+$nightwavetranslatelist = null; $nightwavetranslatelist_filedate = null;
 
 readconfig();
 
@@ -47,5 +48,7 @@ readconfig();
 //var_dump( $webhookurl_devel_filedate );
 //var_dump( $itemtranslatelist );
 //var_dump( $itemtranslatelist_filedate );
+//var_dump( $nightwavetranslatelist );
+//var_dump( $nightwavetranslatelist_filedate );
 
 ?>
