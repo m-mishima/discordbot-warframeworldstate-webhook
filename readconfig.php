@@ -15,7 +15,8 @@ function readconfig() {
                        'webhookurl_nicefissure',
                        'webhookurl_devel',
                        'itemtranslatelist',
-                       'nightwavetranslatelist'
+                       'nightwavetranslatelist',
+                       'invasionfilterlist'
     );
 
     foreach ( $readlist as $v ) {

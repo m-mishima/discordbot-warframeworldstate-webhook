@@ -3,6 +3,7 @@
 include __DIR__ . '/readconfig.php';
 include __DIR__ . '/getworldstate.php';
 include __DIR__ . '/fissurefilter.php';
+include __DIR__ . '/invasionfilter.php';
 include __DIR__ . '/sendmessageviawebhook.php';
 
 $eventids_old = array();	// イベント更新チェック用の、旧イベントIDリスト
@@ -19,6 +20,7 @@ function main() {
     $alert_text = '';
     $baro_text = '';
     $nightwave_text = '';
+    $invasions_text = '';
 
     readconfig();
 
@@ -30,8 +32,8 @@ function main() {
     }
 
     foreach( $json['Sorties'] as $v ) {	// ソーティ
-        $update_check_hash = 'sortie' . hash( 'sha256', json_encode( $v ) );
         if ( isset( $v['_id']['$oid'] ) ) {
+            $update_check_hash = 'sortie' . $v['_id']['$oid'];
             if ( !isset( $eventids_old[ $update_check_hash ] ) ) {
                 $sortie_text .= parse_sortie( $v );
             }
@@ -82,6 +84,19 @@ function main() {
         $eventids_new[ $update_check_hash ] = 'checked';
     }
 
+    foreach( $json['Invasions'] as $v ) {	// 侵略
+        if ( isset( $v['_id']['$oid'] ) ) {
+            $update_check_hash = 'invasion' . $v['_id']['$oid'];
+            if ( !isset( $eventids_old[ $update_check_hash ] ) ) {
+                // 侵略ミッションは、フィルター条件を満たしたもののみ表示
+                if ( invasionfilter( $v ) == 'accept' ) {
+                    $invasions_text .= parse_invasion( $v );
+                }
+            }
+            $eventids_new[ $update_check_hash ] = 'checked';
+        }
+    }
+
 
     $eventids_old = $eventids_new;
 
@@ -109,6 +124,10 @@ function main() {
     if ( $nightwave_text != '' ) {
         sendmessageviawebhook( $webhookurl_devel, $nightwave_text );
         echo $nightwave_text . PHP_EOL;
+    }
+    if ( $invasions_text != '' ) {
+        sendmessageviawebhook( $webhookurl_devel, $invasions_text );
+        echo $invasions_text . PHP_EOL;
     }
 
 }

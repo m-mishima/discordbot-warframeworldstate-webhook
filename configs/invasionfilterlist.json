@@ -1,0 +1,57 @@
+// 侵略ミッション　で表示する条件の設定
+[
+    {
+	"Item": "\/Lotus\/StoreItems\/Types\/Recipes\/Components\/FormaAuraBlueprint",
+	// action: accept に到達すると、いい亀裂として認められる
+	"action": "accept"
+    },
+    {
+	// Item と Reward は同じ動作
+	"Reward": "\/Lotus\/StoreItems\/Types\/Recipes\/Components\/FormaBlueprint",
+	"action": "accept"
+    },
+    {
+	// フォーマBP, オロキンリアクターBP, オロキンカタリストBP は内部では二種類ある
+	"Reward": "\/Lotus\/Types\/Recipes\/Components\/FormaBlueprint",
+	"action": "accept"
+    },
+    {
+	// フォーマ現物
+	"Reward": "\/Lotus\/StoreItems\/Types\/Items\/MiscItems\/Forma",
+	"action": "accept"
+    },
+    {
+	// オロキンカタリストBP
+	"Reward": "\/Lotus\/StoreItems\/Types\/Recipes\/Components\/OrokinCatalystBlueprint",
+	"action": "accept"
+    },
+    {
+	"Reward": "\/Lotus\/Types\/Recipes\/Components\/OrokinCatalystBlueprint",
+	"action": "accept"
+    },
+    {
+	// オロキンリアクターBP
+	"Reward": "\/Lotus\/StoreItems\/Types\/Recipes\/Components\/OrokinReactorBlueprint",
+	"action": "accept"
+    },
+    {
+	"Reward": "\/Lotus\/Types\/Recipes\/Components\/OrokinReactorBlueprint",
+	"action": "accept"
+    }
+//    {
+//	// ノード指定も可
+//	"Node": "SolNode27",
+//	// 値が 数値+credit の場合は、指定クレジット以上の場合に条件を満たす
+//	// 条件が複数ある場合はAND条件になる
+//	"Reward": "300 credit",
+//	"action": "accept"
+//    },
+//    {
+//	// 値が 数値+count の場合は、指定数量以上の場合に条件を満たす
+//	// サーバからの情報によっては、数量情報が無い場合があり、その場合は判定されない
+//	// つまり、1個以上という指定は逆効果になることがある。2個以上の場合のみ指定することを推奨
+//	"Reward": "3 count",
+//	"action": "accept"
+//    }
+
+]

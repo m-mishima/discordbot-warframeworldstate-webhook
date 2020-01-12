@@ -3,6 +3,7 @@
 include __DIR__ . '/readconfig.php';
 include __DIR__ . '/getworldstate.php';
 include __DIR__ . '/fissurefilter.php';
+include __DIR__ . '/invasionfilter.php';
 
 $eventids_old = array();	// イベント更新チェック用の、旧イベントIDリスト
 
@@ -16,6 +17,7 @@ function main() {
     $alert_text = '';
     $baro_text = '';
     $nightwave_text = '';
+    $invasions_text = '';
 
     readconfig();
 
@@ -53,12 +55,18 @@ function main() {
         $nightwave_text .= parse_nightwave( $json['SeasonInfo'] );
     }
 
+    foreach( $json['Invasions'] as $v ) {	// 侵略ミッション
+        if ( invasionfilter( $v ) == 'accept' ) $invasions_text .= '※';
+        $invasions_text .= parse_invasion( $v );
+    }
+
     echo $sortie_text . PHP_EOL;
     echo $fissure_text . PHP_EOL;
     echo $nicefissure_text . PHP_EOL;
     echo $alert_text . PHP_EOL;
     echo $baro_text . PHP_EOL;
     echo $nightwave_text . PHP_EOL;
+    echo $invasions_text . PHP_EOL;
 
 }
 

@@ -144,44 +144,9 @@ function parse_alert( $alert ) {
     $node     = $alert['MissionInfo']['location'];
     $mission  = $alert['MissionInfo']['missionType'];
 
-    foreach( $alert['MissionInfo']['missionReward'] as $k => $v ) {
-        switch( $k ) {
-        case 'credits':
-            $reward .= sprintf( "%d Credit\n", $v );
-            break;
-        case 'items':
-            foreach( $v as $v1 ) {
-                $in = $v1;
-                if ( isset( $itemtranslatelist[$in] ) ) {
-                    $in = $itemtranslatelist[$in];
-                }
-                $reward .= $in . PHP_EOL;
-            }
-            break;
-        case 'countedItems':
-            foreach( $v as $v1 ) {
-                $in = ''; $ic = 0;
-                foreach( $v1 as $k2 => $v2 ) {
-                    switch( $k2 ) {
-                    case 'ItemType':
-                        $in = $v2;
-                        if ( isset( $itemtranslatelist[$in] ) ) {
-                            $in = $itemtranslatelist[$in];
-                        }
-                        break;
-                    case 'ItemCount':
-                        $ic = $v2;
-                        break;
-                    }
-                }
-                if ( ( $in != '' ) && ( $ic != 0 ) ) {
-                    $reward .= $ic . 'x ' . $in . PHP_EOL;
-                }
-            }
-            break;
-        default:
-            break;
-        }
+    $rewardlist = parse_reward( $alert['MissionInfo']['missionReward'] );
+    foreach( $rewardlist as $v ) {
+        $reward .= $v . "\n";
     }
 
     if ( isset( $missiontypelist[ $mission ] ) ) {
@@ -273,4 +238,101 @@ function parse_nightwave( $nightwave ) {
     return $retstr;
 }
 
+function parse_invasion( $invasion ) {
+    global $solnodelist, $timezone;
+
+    date_default_timezone_set( $timezone );
+
+    $retstr = '';
+
+    $oid            = $invasion['_id']['$oid'];
+    $attackfaction  = $invasion['Faction']; // 攻撃側勢力 FC_CORPUS, FC_GRINEER
+    $defencefaction = $invasion['DefenderFaction']; // 防御側勢力
+    $node           = $invasion['Node'];
+    $count          = $invasion['Count']; // 進行度？
+    $goal           = $invasion['Goal'];
+    $completed      = $invasion['Completed']; // true, false
+    $chainid        = $invasion['ChainID']['$oid'];
+
+    $datefrom  = $invasion['Activation']['$date']['$numberLong'];
+
+    $s = date('Y-m-d H:i:s', $datefrom / 1000 );
+
+    if ( isset( $solnodelist[ $node ] ) ) {
+        $node = $solnodelist[ $node ];
+    }
+
+    $retstr .= sprintf( "侵略 %s %s～\n", $node, $s );
+
+    $attackrewardlist  = parse_reward( $invasion['AttackerReward'] );
+    $defencerewardlist = parse_reward( $invasion['DefenderReward'] );
+
+    $attackrewardstr = '';
+    foreach( $attackrewardlist as $v ) {
+        if ( $attackrewardstr != '' ) $attackrewardstr .= ', ';
+        $attackrewardstr .= $v;
+    }
+
+    $defencerewardstr = '';
+    foreach( $defencerewardlist as $v ) {
+        if ( $defencerewardstr != '' ) $defencerewardstr .= ', ';
+        $defencerewardstr .= $v;
+    }
+
+    if ( $attackrewardstr == '' ) {
+        // if infestation mission, no reward from infedted faction
+        $retstr .= sprintf( "[ %s ]\n", $defencerewardstr );
+    } else {
+        $retstr .= sprintf( "[ %s ] vs [ %s ]\n", $attackrewardstr, $defencerewardstr );
+    }
+
+    return $retstr;
+}
+
+function parse_reward( $rewardinfo ) {
+    global $itemtranslatelist;
+
+    $rewardlist = array();
+    foreach( $rewardinfo as $k => $v ) {
+        switch( $k ) {
+        case 'credits':
+            $rewardlist[] = sprintf( "%d Credit", $v );
+            break;
+        case 'items':
+            foreach( $v as $v1 ) {
+                $in = $v1;
+                if ( isset( $itemtranslatelist[$in] ) ) {
+                    $in = $itemtranslatelist[$in];
+                }
+                $rewardlist[] = $in;
+            }
+            break;
+        case 'countedItems':
+            foreach( $v as $v1 ) {
+                $in = ''; $ic = 0;
+                foreach( $v1 as $k2 => $v2 ) {
+                    switch( $k2 ) {
+                    case 'ItemType':
+                        $in = $v2;
+                        if ( isset( $itemtranslatelist[$in] ) ) {
+                            $in = $itemtranslatelist[$in];
+                        }
+                        break;
+                    case 'ItemCount':
+                        $ic = $v2;
+                        break;
+                    }
+                }
+                if ( ( $in != '' ) && ( $ic != 0 ) ) {
+                    $rewardlist[] = $ic . 'x ' . $in;
+                }
+            }
+            break;
+        default:
+            break;
+        }
+    }
+
+    return $rewardlist;
+}
 ?>
