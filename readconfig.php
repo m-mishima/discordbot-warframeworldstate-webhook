@@ -16,7 +16,8 @@ function readconfig() {
                        'webhookurl_devel',
                        'itemtranslatelist',
                        'nightwavetranslatelist',
-                       'invasionfilterlist'
+                       'invasionfilterlist',
+                       'alertweaponmodifierlist'
     );
 
     foreach ( $readlist as $v ) {

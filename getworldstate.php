@@ -121,12 +121,13 @@ function parse_sortie( $sortie ) {
 }
 
 function parse_alert( $alert ) {
-    global $missiontypelist, $solnodelist, $itemtranslatelist, $timezone;
+    global $missiontypelist, $solnodelist, $itemtranslatelist, $alertweaponmodifierlist, $timezone;
 
     date_default_timezone_set( $timezone );
 
     $retstr = '';
     $reward = '';
+    $regulation = '';
 
     $datefrom = $alert['Activation']['$date']['$numberLong'];
     $dateend  = $alert['Expiry']['$date']['$numberLong'];
@@ -141,8 +142,17 @@ function parse_alert( $alert ) {
 
     $retstr .= sprintf( "%s %s～%s\n", $alerttitle, $s, $e );
 
-    $node     = $alert['MissionInfo']['location'];
-    $mission  = $alert['MissionInfo']['missionType'];
+    $node          = $alert['MissionInfo']['location'];
+    $mission       = $alert['MissionInfo']['missionType'];
+    $enemylevelmin = $alert['MissionInfo']['minEnemyLevel'];
+    $enemylevelmax = $alert['MissionInfo']['maxEnemyLevel'];
+    $wave          = $alert['MissionInfo']['maxWaveNum'];
+    if ( isset( $alert['MissionInfo']['exclusiveWeapon'] ) ) {
+        $regulation = $alert['MissionInfo']['exclusiveWeapon'];
+        if ( isset( $alertweaponmodifierlist[ $regulation ] ) ) {
+            $regulation = "*" . $alertweaponmodifierlist[ $regulation ];
+        }
+    }
 
     $rewardlist = parse_reward( $alert['MissionInfo']['missionReward'] );
     foreach( $rewardlist as $v ) {
@@ -157,7 +167,7 @@ function parse_alert( $alert ) {
         $node = $solnodelist[ $node ];
     }
 
-    $retstr .= sprintf( "%s %s\n", $node, $mission );
+    $retstr .= sprintf( "%s %s (Lv%d-%d) %dwave %s\n", $node, $mission, $enemylevelmin, $enemylevelmax, $wave, $regulation );
     $retstr .= $reward . PHP_EOL;
 
     return $retstr;

@@ -2,23 +2,23 @@
 
 include __DIR__ . '/readconfig.php';
 
-$missiontypelist = null;        $missiontypelist_filedate = null;
-$regionlist = null;             $regionlist_filedate = null;
-$solnodelist = null;            $solnodelist_filedate = null;
-$sortiebosslist = null;         $sortiebosslist_filedate = null;
-$sortiemodifierlist = null;     $sortiemodifierlist_filedate = null;
-$fissurefilterlist = null;      $fissurefilterlist_filedate = null;
-$voidrelictierlist = null;      $voidrelictierlist_filedate = null;
-$timezone = null;               $timezone_filedate = null;
-$worldstateurl = null;          $worldstateurl_filedate = null;
-$webhookurl_sortie = null;      $webhookurl_sortie_filedate = null;
-$webhookurl_fissure = null;     $webhookurl_fissure_filedate = null;
-$webhookurl_nicefissure = null; $webhookurl_nicefissure_filedate = null;
-$webhookurl_devel = null;       $webhookurl_devel_filedate = null;
-$itemtranslatelist = null;      $itemtranslatelist_filedate = null;
-$nightwavetranslatelist = null; $nightwavetranslatelist_filedate = null;
-$invasionfilterlist = null;     $invasionfilterlist_filedate = null;
-
+$missiontypelist = null;         $missiontypelist_filedate = null;
+$regionlist = null;              $regionlist_filedate = null;
+$solnodelist = null;             $solnodelist_filedate = null;
+$sortiebosslist = null;          $sortiebosslist_filedate = null;
+$sortiemodifierlist = null;      $sortiemodifierlist_filedate = null;
+$fissurefilterlist = null;       $fissurefilterlist_filedate = null;
+$voidrelictierlist = null;       $voidrelictierlist_filedate = null;
+$timezone = null;                $timezone_filedate = null;
+$worldstateurl = null;           $worldstateurl_filedate = null;
+$webhookurl_sortie = null;       $webhookurl_sortie_filedate = null;
+$webhookurl_fissure = null;      $webhookurl_fissure_filedate = null;
+$webhookurl_nicefissure = null;  $webhookurl_nicefissure_filedate = null;
+$webhookurl_devel = null;        $webhookurl_devel_filedate = null;
+$itemtranslatelist = null;       $itemtranslatelist_filedate = null;
+$nightwavetranslatelist = null;  $nightwavetranslatelist_filedate = null;
+$invasionfilterlist = null;      $invasionfilterlist_filedate = null;
+$alertweaponmodifierlist = null; $alertweaponmodifierlist_filedate = null;
 readconfig();
 
 //var_dump( $missiontypelist );
@@ -53,5 +53,7 @@ readconfig();
 //var_dump( $nightwavetranslatelist_filedate );
 //var_dump( $invasionfilterlist );
 //var_dump( $invasionfilterlist_filedate );
+//var_dump( $alertweaponmodifierlist );
+//var_dump( $alertweaponmodifierlist_filedate );
 
 ?>
