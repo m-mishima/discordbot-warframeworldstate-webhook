@@ -18,6 +18,7 @@ function main() {
     $baro_text = '';
     $nightwave_text = '';
     $invasions_text = '';
+    $sentientship_text = '';
 
     readconfig();
 
@@ -60,6 +61,10 @@ function main() {
         $invasions_text .= parse_invasion( $v );
     }
 
+    if ( isset( $json['Tmp'] ) ) {
+        $sentientship_text = parse_sentientship( $json['Tmp'] );
+    }
+
     echo $sortie_text . PHP_EOL;
     echo $fissure_text . PHP_EOL;
     echo $nicefissure_text . PHP_EOL;
@@ -67,6 +72,7 @@ function main() {
     echo $baro_text . PHP_EOL;
     echo $nightwave_text . PHP_EOL;
     echo $invasions_text . PHP_EOL;
+    echo $sentientship_text . PHP_EOL;
 
 }
 

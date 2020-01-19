@@ -299,6 +299,40 @@ function parse_invasion( $invasion ) {
     return $retstr;
 }
 
+function parse_sentientship( $sentient ) {
+
+    $locationlist = array(
+        505 => "Ruse War Field",
+        510 => "Gian Point",
+        550 => "Nsu Grid",
+        551 => "Ganalen's Grave",
+        552 => "Rya",
+        553 => "Flexa",
+        554 => "H-2 Cloud",
+        555 => "R-9 Cloud"
+    );
+
+    $retstr = '';
+    $node = '';
+
+    $senti = json_decode( $sentient, true );
+    if ( isset( $senti['sfn'] ) ) {
+        $node = $senti['sfn'];
+        if ( isset( $locationlist[ 0 + $node ] ) ) {
+            $node = $locationlist[ 0 + $node ];
+        } else {
+            $node = "UnknownNode(" . $node . ")";
+        }
+    }
+
+    if ( $node != '' ) {
+        $retstr .= "センチエント船遭遇警報！\n";
+        $retstr .= "位置：" . $node . "\n";
+    }
+
+    return $retstr;
+}
+
 function parse_reward( $rewardinfo ) {
     global $itemtranslatelist;
 

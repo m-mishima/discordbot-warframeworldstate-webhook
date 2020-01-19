@@ -11,7 +11,7 @@ $eventids_old = array();	// イベント更新チェック用の、旧イベン�
 function main() {
 
     global $worldstateurl, $eventids_old;
-    global $webhookurl_sortie, $webhookurl_fissure, $webhookurl_nicefissure, $webhookurl_devel;
+    global $webhookurl_sortie, $webhookurl_fissure, $webhookurl_nicefissure, $webhookurl_sentientship, $webhookurl_devel;
     $eventids_new = array();
 
     $sortie_text = '';
@@ -21,6 +21,7 @@ function main() {
     $baro_text = '';
     $nightwave_text = '';
     $invasions_text = '';
+    $sentientship_text = '';
 
     readconfig();
 
@@ -97,6 +98,14 @@ function main() {
         }
     }
 
+    if ( isset( $json['Tmp'] ) ) {   // sentient ship
+        $update_check_hash = 'sentientship' . hash( 'sha256', json_encode( $json['Tmp'] ) );
+        if ( !isset( $eventids_old[ $update_check_hash ] ) ) {
+            $sentientship_text .= parse_sentientship( $json['Tmp'] );
+        }
+        $eventids_new[ $update_check_hash ] = 'checked';
+    }
+
 
     $eventids_old = $eventids_new;
 
@@ -111,6 +120,10 @@ function main() {
     if ( $nicefissure_text != '' ) {
         sendmessageviawebhook( $webhookurl_nicefissure, $nicefissure_text );
         echo $nicefissure_text . PHP_EOL;
+    }
+    if ( $sentientship_text != '' ) {
+        sendmessageviawebhook( $webhookurl_sentientship, $sentientship_text );
+        echo $sentientship_text . PHP_EOL;
     }
 
     if ( $alert_text != '' ) {
