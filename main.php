@@ -72,6 +72,10 @@ function main() {
         if ( isset( $v['_id']['$oid'] ) ) {
             if ( !isset( $eventids_old[ $update_check_hash ] ) ) {
                 $baro_text .= parse_baro( $v );
+                if ( ( isset( $v['Manifest'] ) ) && ( is_dir( "barolog" ) ) ) {
+                    $filename = sprintf( "barolog/baro-shopitems-%s-%s.log", date( 'Y-m-d' ), '' . $v['_id']['$oid'] );
+                    file_put_contents( $filename, $baro_text );
+                }
             }
             $eventids_new[ $update_check_hash ] = 'checked';
         }
