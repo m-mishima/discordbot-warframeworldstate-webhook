@@ -1,0 +1,7 @@
+// フィルタに引っかかった侵略ミッション情報の送り先
+// nice invasion mission info send url
+// put your discord channel webhook url
+// require '/' to '\/' escape sequence
+[
+    "https:\/\/discordapp.com\/api\/webhooks\/999999999999999999\/********************************************************************"
+]

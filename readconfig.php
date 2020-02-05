@@ -13,6 +13,7 @@ function readconfig() {
                        'webhookurl_sortie',
                        'webhookurl_fissure',
                        'webhookurl_nicefissure',
+                       'webhookurl_niceinvasion',
                        'webhookurl_sentientship',
                        'webhookurl_devel',
                        'itemtranslatelist',
