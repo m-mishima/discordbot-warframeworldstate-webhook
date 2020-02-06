@@ -367,8 +367,12 @@ function parse_reward( $rewardinfo ) {
                         break;
                     }
                 }
-                if ( ( $in != '' ) && ( $ic != 0 ) ) {
-                    $rewardlist[] = $ic . 'x ' . $in;
+                if ( $in != '' ) {
+                    if ( $ic == 1 ) {
+                        $rewardlist[] = $ic;
+                    } else if ( $ic >= 2 ) {
+                        $rewardlist[] = $ic . 'x ' . $in;
+                    }
                 }
             }
             break;
