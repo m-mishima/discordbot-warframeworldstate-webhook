@@ -369,7 +369,7 @@ function parse_reward( $rewardinfo ) {
                 }
                 if ( $in != '' ) {
                     if ( $ic == 1 ) {
-                        $rewardlist[] = $ic;
+                        $rewardlist[] = $in;
                     } else if ( $ic >= 2 ) {
                         $rewardlist[] = $ic . 'x ' . $in;
                     }
