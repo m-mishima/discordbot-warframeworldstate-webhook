@@ -19,6 +19,7 @@ function main() {
     $nightwave_text = '';
     $invasions_text = '';
     $sentientship_text = '';
+    $acolyte_text = '';
 
     readconfig();
 
@@ -61,6 +62,10 @@ function main() {
         $invasions_text .= parse_invasion( $v );
     }
 
+    foreach( $json['PersistentEnemies'] as $v ) {	// acolyte
+        $acolyte_text .= parse_acolyte( $v );
+    }
+
     if ( isset( $json['Tmp'] ) ) {
         $sentientship_text = parse_sentientship( $json['Tmp'] );
     }
@@ -72,6 +77,7 @@ function main() {
     echo $baro_text . PHP_EOL;
     echo $nightwave_text . PHP_EOL;
     echo $invasions_text . PHP_EOL;
+    echo $acolyte_text . PHP_EOL;
     echo $sentientship_text . PHP_EOL;
 
 }

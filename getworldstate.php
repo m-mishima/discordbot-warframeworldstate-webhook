@@ -299,6 +299,90 @@ function parse_invasion( $invasion ) {
     return $retstr;
 }
 
+function parse_acolyte( $acolyte ) {
+    global $acolytelist, $solnodelist, $regionlist, $timezone;
+
+    date_default_timezone_set( $timezone );
+
+    $retstr = '';
+
+    $oid                    = $acolyte['_id']['$oid'];
+    $agenttype              = $acolyte['AgentType']; // /Lotus/Types/Enemies/Acolytes/ControlAcolyteAgent
+    $loctag                 = $acolyte['LocTag']; // /Lotus/Language/Game/ControlAcolyte
+    $icon                   = $acolyte['Icon']; // /Lotus/Interface/Icons/Npcs/Special/ControlAcolyte.png
+    $rank                   = $acolyte['Rank']; // 30
+    $healthpercent          = $acolyte['HealthPercent']; // 0.931803225
+    $fleedamage             = $acolyte['FleeDamage']; // 50000
+    $lastdiscoveredlocation = $acolyte['LastDiscoveredLocation']; // SolNode62
+    $discovered             = $acolyte['Discovered']; // false
+    $useticketing           = $acolyte['UseTicketing']; // false
+
+    $region = '';
+    if ( isset( $acolyte['Region'] ) ) {
+        $region = $acolyte['Region'];
+    }
+    if ( isset( $regionlist[ $region ] ) ) {
+        $region = $regionlist[ $region + 1 ];
+    }
+
+    $lastdiscoveredtime = $acolyte['LastDiscoveredTime']['$date']['$numberLong'];
+
+    $lastdiscoveredtime = date('Y-m-d H:i:s', $lastdiscoveredtime / 1000 );
+
+    if ( isset( $solnodelist[ $lastdiscoveredlocation ] ) ) {
+        $lastdiscoveredlocation = $solnodelist[ $lastdiscoveredlocation ];
+    }
+
+    $name = "";
+    $mods = "";
+    if ( isset( $acolytelist[ $agenttype ] ) ) {
+        $acolyteinfo = $acolytelist[ $agenttype ];
+        $name = $acolyteinfo['name'];
+        $mods = $acolyteinfo['mods'];
+    }
+
+    if ( $name != '' ) {
+        $titleline = 'Acolyte ' . $name;
+        if ( $discovered === false ) {
+            $retstr .= '~~' . $titleline . ' is HIDDEN~~' . PHP_EOL;
+        } else {
+            $retstr .= $titleline . PHP_EOL;
+
+            $modstr = '';
+            foreach( $mods as $k => $v ) {
+                if ( $modstr != '' ) $modstr .= ', ';
+                $modstr .= $k . ' ' . $v . '%';
+            }
+            $retstr .= $modstr . PHP_EOL;
+            $retstr .= $lastdiscoveredlocation;
+            if ( $region != '' ) {
+                $retstr .= '(' . $region . ')';
+            }
+            $retstr .= ' ' . $lastdiscoveredtime . '～' . PHP_EOL;
+        }
+    }
+
+    return $retstr;
+}
+
+function create_acolytehash( $acolyte ) {
+    $oid                    = $acolyte['_id']['$oid'];
+    $agenttype              = $acolyte['AgentType'];
+    $lastdiscoveredlocation = $acolyte['LastDiscoveredLocation'];
+    $lastdiscoveredtime     = $acolyte['LastDiscoveredTime']['$date']['$numberLong'];
+    $discovered             = $acolyte['Discovered'];
+
+    $arr = array(
+        'oid' => $oid,
+        'agenttype' => $agenttype,
+        'lastdiscoveredlocation' => $lastdiscoveredlocation,
+        'lastdiscoveredtime' => $lastdiscoveredtime,
+        'discovered' => $discovered
+    );
+
+    return hash( 'sha256', json_encode( $arr ) );
+}
+
 function parse_sentientship( $sentient ) {
 
     $locationlist = array(

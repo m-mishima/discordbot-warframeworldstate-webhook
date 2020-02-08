@@ -14,12 +14,14 @@ function readconfig() {
                        'webhookurl_fissure',
                        'webhookurl_nicefissure',
                        'webhookurl_niceinvasion',
+                       'webhookurl_acolyte',
                        'webhookurl_sentientship',
                        'webhookurl_devel',
                        'itemtranslatelist',
                        'nightwavetranslatelist',
                        'invasionfilterlist',
-                       'alertweaponmodifierlist'
+                       'alertweaponmodifierlist',
+                       'acolytelist'
     );
 
     foreach ( $readlist as $v ) {

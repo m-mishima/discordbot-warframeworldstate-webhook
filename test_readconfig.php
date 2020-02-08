@@ -15,12 +15,14 @@ $webhookurl_sortie = null;       $webhookurl_sortie_filedate = null;
 $webhookurl_fissure = null;      $webhookurl_fissure_filedate = null;
 $webhookurl_nicefissure = null;  $webhookurl_nicefissure_filedate = null;
 $webhookurl_niceinvasion = null; $webhookurl_niceinvasion_filedate = null;
+$webhookurl_acolyte = null;      $webhookurl_acolyte_filedate = null;
 $webhookurl_sentientship = null; $webhookurl_sentientship_filedate = null;
 $webhookurl_devel = null;        $webhookurl_devel_filedate = null;
 $itemtranslatelist = null;       $itemtranslatelist_filedate = null;
 $nightwavetranslatelist = null;  $nightwavetranslatelist_filedate = null;
 $invasionfilterlist = null;      $invasionfilterlist_filedate = null;
 $alertweaponmodifierlist = null; $alertweaponmodifierlist_filedate = null;
+$acolytelist = null;             $acolytelist_filedate = null;
 readconfig();
 
 //var_dump( $missiontypelist );
@@ -49,6 +51,8 @@ readconfig();
 //var_dump( $webhookurl_nicefissure_filedate );
 //var_dump( $webhookurl_niceinvasion );
 //var_dump( $webhookurl_niceinvasion_filedate );
+//var_dump( $webhookurl_acolyte );
+//var_dump( $webhookurl_acolyte_filedate );
 //var_dump( $webhookurl_sentientship );
 //var_dump( $webhookurl_sentientship_filedate );
 //var_dump( $webhookurl_devel );
@@ -61,5 +65,7 @@ readconfig();
 //var_dump( $invasionfilterlist_filedate );
 //var_dump( $alertweaponmodifierlist );
 //var_dump( $alertweaponmodifierlist_filedate );
+//var_dump( $acolytelist );
+//var_dump( $acolytelist_filedate );
 
 ?>

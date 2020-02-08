@@ -1,0 +1,73 @@
+// acolyte specs
+{
+    "\/Lotus\/Types\/Enemies\/Acolytes\/HeavyAcolyteAgent": {
+	"name": "Malice",
+	"mods": {
+	    "Focused Defense": 51.52,
+	    "Targeting Subsystem": 22.22,
+	    "Guided Ordnance": 22.22,
+	    "Narrow Barrel": 4.04
+	}
+    },
+    "\/Lotus\/Types\/Enemies\/Acolytes\/StrikerAcolyteAgent": {
+	"name": "Angst",
+	"mods": {
+	    "Body Count": 51.52,
+	    "Spring-Loaded Chamber": 22.22,
+	    "Repeater Clip": 22.22,
+	    "Pressurized Magazine": 4.04
+	}
+    },
+    "\/Lotus\/Types\/Enemies\/Acolytes\/ControlAcolyteAgent": {
+	"name": "Torment",
+	"mods": {
+	    "Hydraulic Crosshairs": 51.52,
+	    "Laser Sight": 22.22,
+	    "Blood Rush": 22.22,
+	    "Argon Scope": 4.04
+	}
+    },
+    "\/Lotus\/Types\/Enemies\/Acolytes\/DuellistAcolyteAgent": {
+	"name": "Violence",
+	"mods": {
+	    "Shrapnel Shot": 51.52,
+	    "Sharpened Bullets": 22.22,
+	    "Bladed Rounds": 22.22,
+	    "Maiming Strike": 4.04
+	}
+    },
+    "\/Lotus\/Types\/Enemies\/Acolytes\/RogueAcolyteAgent": {
+	"name": "Mania",
+	"mods": {
+	    "Catalyzer Link": 51.52,
+	    "Embedded Catalyzer": 22.22,
+	    "Weeping Wounds": 22.22,
+	    "Nano-Applicator": 4.04
+	}
+    },
+    "\/Lotus\/Types\/Enemies\/Acolytes\/AreaCasterAcolyteAvatar": {
+	"name": "Misery",
+	"mods": {
+	    "Focused Defense": 25.38,
+	    "Body Count": 8.57,
+	    "Hydraulic Crosshairs": 8.57,
+	    "Catalyzer Link": 8.57,
+	    "Shrapnel Shot": 8.57,
+	    "Blood Rush": 3.7,
+	    "Weeping Wounds": 3.7,
+	    "Sharpened Bullets": 3.7,
+	    "Embedded Catalyzer": 3.7,
+	    "Bladed Rounds": 3.7,
+	    "Spring-Loaded Chamber": 3.7,
+	    "Laser Sight": 3.7,
+	    "Repeater Clip": 3.7,
+	    "Targeting Subsystem": 3.7,
+	    "Guided Ordnance": 3.7,
+	    "Maiming Strike": 0.67,
+	    "Pressurized Magazine": 0.67,
+	    "Argon Scope": 0.67,
+	    "Nano-Applicator": 0.67,
+	    "Narrow Barrel": 0.67
+	}
+    }
+}

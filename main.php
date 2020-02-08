@@ -11,7 +11,7 @@ $eventids_old = array();	// イベント更新チェック用の、旧イベン�
 function main() {
 
     global $worldstateurl, $eventids_old;
-    global $webhookurl_sortie, $webhookurl_fissure, $webhookurl_nicefissure, $webhookurl_niceinvasion, $webhookurl_sentientship, $webhookurl_devel;
+    global $webhookurl_sortie, $webhookurl_fissure, $webhookurl_nicefissure, $webhookurl_niceinvasion, $webhookurl_acolyte, $webhookurl_sentientship, $webhookurl_devel;
     $eventids_new = array();
 
     $sortie_text = '';
@@ -22,6 +22,7 @@ function main() {
     $nightwave_text = '';
     $niceinvasion_text = '';
     $sentientship_text = '';
+    $acolyte_text = '';
 
     readconfig();
 
@@ -102,6 +103,16 @@ function main() {
         }
     }
 
+    foreach( $json['PersistentEnemies'] as $v ) {	// アコライト
+        if ( isset( $v['_id']['$oid'] ) ) {
+            $update_check_hash = 'acolyte' . create_acolytehash( $v );
+            if ( !isset( $eventids_old[ $update_check_hash ] ) ) {
+                $acolyte_text .= parse_acolyte( $v );
+            }
+            $eventids_new[ $update_check_hash ] = 'checked';
+        }
+    }
+
     if ( isset( $json['Tmp'] ) ) {   // sentient ship
         $update_check_hash = 'sentientship' . hash( 'sha256', json_encode( $json['Tmp'] ) );
         if ( !isset( $eventids_old[ $update_check_hash ] ) ) {
@@ -145,6 +156,10 @@ function main() {
     if ( $niceinvasion_text != '' ) {
         sendmessageviawebhook( $webhookurl_niceinvasion, $niceinvasion_text );
         echo $niceinvasion_text . PHP_EOL;
+    }
+    if ( $acolyte_text != '' ) {
+        sendmessageviawebhook( $webhookurl_acolyte, $acolyte_text );
+        echo $acolyte_text . PHP_EOL;
     }
 
 }
