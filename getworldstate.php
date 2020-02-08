@@ -344,7 +344,7 @@ function parse_acolyte( $acolyte ) {
     if ( $name != '' ) {
         $titleline = 'Acolyte ' . $name;
         if ( $discovered === false ) {
-            $retstr .= '~~' . $titleline . ' is HIDDEN~~' . PHP_EOL;
+            $retstr .= $titleline . ' is lost' . PHP_EOL;
         } else {
             $retstr .= $titleline . PHP_EOL;
 
