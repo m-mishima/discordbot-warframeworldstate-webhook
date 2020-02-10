@@ -57,6 +57,10 @@ function parse_voidfissure( $activemission ) {
     $s = date('H:i:s', $datefrom / 1000 );
     $e = date('H:i:s', $dateend / 1000 );
 
+    if ( ( isset( $solnodelist[$node] ) ) && ( isset( $solnodelist[$node]['region'] ) ) ) {
+        // overwrite region value. correct DE's server response.
+        $region = $solnodelist[$node]['region'];
+    }
     if ( isset( $regionlist[ $region ] ) ) {
         $region = $regionlist[ $region ];
     }
@@ -65,8 +69,8 @@ function parse_voidfissure( $activemission ) {
         $mission = $missiontypelist[ $mission ];
     }
 
-    if ( isset( $solnodelist[ $node ] ) ) {
-        $node = $solnodelist[ $node ];
+    if ( ( isset( $solnodelist[ $node ] ) ) && ( isset( $solnodelist[ $node ]['name'] ) ) ) {
+        $node = $solnodelist[ $node ]['name'];
     }
 
     $retstr .= sprintf( "%s(%s) %s %s %s～%s\n", $node, $region, $mission, $voidrelictierlist[ $tier ], $s, $e );
@@ -76,7 +80,7 @@ function parse_voidfissure( $activemission ) {
 
 
 function parse_sortie( $sortie ) {
-    global $sortiebosslist, $sortiemodifierlist, $missiontypelist, $solnodelist, $timezone;
+    global $sortiebosslist, $sortiemodifierlist, $missiontypelist, $solnodelist, $regionlist, $timezone;
 
     date_default_timezone_set( $timezone );
 
@@ -105,15 +109,25 @@ function parse_sortie( $sortie ) {
             $mission = $missiontypelist[ $mission ];
         }
 
-        if ( isset( $solnodelist[ $node ] ) ) {
-            $node = $solnodelist[ $node ];
+        $nodename = '';
+        if ( ( isset( $solnodelist[ $node ] ) ) && ( isset( $solnodelist[ $node ]['name'] ) ) ) {
+            $nodename = $solnodelist[ $node ]['name'];
+        } else {
+            $nodename = $node;
+        }
+        if ( ( isset( $solnodelist[ $node ] ) ) && ( isset( $solnodelist[ $node ]['region'] ) ) ) {
+            $region = $solnodelist[ $node ]['region'];
+            if ( isset( $regionlist[ $region ] ) ) {
+                $region = $regionlist[ $region ];
+                $nodename .= '(' . $region . ')';
+            }
         }
 
         if ( isset( $sortiemodifierlist[ $modifier ] ) ) {
             $modifier = $sortiemodifierlist[ $modifier ];
         }
 
-        $retstr .= sprintf( "%s %s %s\n", $node, $mission, $modifier );
+        $retstr .= sprintf( "%s %s %s\n", $nodename, $mission, $modifier );
 
     }
 
@@ -163,8 +177,8 @@ function parse_alert( $alert ) {
         $mission = $missiontypelist[ $mission ];
     }
 
-    if ( isset( $solnodelist[ $node ] ) ) {
-        $node = $solnodelist[ $node ];
+    if ( ( isset( $solnodelist[ $node ] ) ) && ( isset( $solnodelist[ $node ]['name'] ) ) ) {
+        $node = $solnodelist[ $node ]['name'];
     }
 
     $retstr .= sprintf( "%s %s (Lv%d-%d) %dwave %s\n", $node, $mission, $enemylevelmin, $enemylevelmax, $wave, $regulation );
@@ -268,8 +282,8 @@ function parse_invasion( $invasion ) {
 
     $s = date('Y-m-d H:i:s', $datefrom / 1000 );
 
-    if ( isset( $solnodelist[ $node ] ) ) {
-        $node = $solnodelist[ $node ];
+    if ( ( isset( $solnodelist[ $node ] ) ) && ( isset( $solnodelist[ $node ]['name'] ) ) ) {
+        $node = $solnodelist[ $node ]['name'];
     }
 
     $retstr .= sprintf( "侵略 %s %s～\n", $node, $s );
@@ -319,18 +333,22 @@ function parse_acolyte( $acolyte ) {
 
     $region = '';
     if ( isset( $acolyte['Region'] ) ) {
-        $region = $acolyte['Region'];
+        $region = $acolyte['Region'] + 1;
+    }
+    if ( ( isset( $solnodelist[$lastdiscoveredlocation] ) ) && ( isset( $solnodelist[$lastdiscoveredlocation]['region'] ) ) ) {
+        // overwrite region value. correct DE's server response.
+        $region = $solnodelist[$lastdiscoveredlocation]['region'];
     }
     if ( isset( $regionlist[ $region ] ) ) {
-        $region = $regionlist[ $region + 1 ];
+        $region = $regionlist[ $region ];
     }
 
     $lastdiscoveredtime = $acolyte['LastDiscoveredTime']['$date']['$numberLong'];
 
     $lastdiscoveredtime = date('Y-m-d H:i:s', $lastdiscoveredtime / 1000 );
 
-    if ( isset( $solnodelist[ $lastdiscoveredlocation ] ) ) {
-        $lastdiscoveredlocation = $solnodelist[ $lastdiscoveredlocation ];
+    if ( ( isset( $solnodelist[ $lastdiscoveredlocation ] ) ) && ( isset( $solnodelist[ $lastdiscoveredlocation ]['name'] ) ) ) {
+        $lastdiscoveredlocation = $solnodelist[ $lastdiscoveredlocation ]['name'];
     }
 
     $name = "";

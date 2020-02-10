@@ -3,13 +3,21 @@
 function fissurefilter( $voidinfo ) {
     global $regionlist, $missiontypelist, $voidrelictierlist, $solnodelist;
     global $fissurefilterlist;
+
+    $node   = $voidinfo['Node'];
+    $region = $voidinfo['Region'];
+    if ( ( isset( $solnodelist[$node] ) ) && ( isset( $solnodelist[$node]['region'] ) ) ) {
+        // overwrite region value. correct DE's server response.
+        $region = $solnodelist[$node]['region'];
+    }
+
     foreach( $fissurefilterlist as $v1 ) {
         $r = true;
         foreach( $v1 as $k2 => $v2 ) {
             switch( $k2 ) {
             case 'Region':
-                if ( $voidinfo['Region'] == $v2 ) break;
-                if ( ( isset( $regionlist[$voidinfo['Region']] ) ) && ( $regionlist[$voidinfo['Region']] == $v2 ) ) break;
+                if ( $region == $v2 ) break;
+                if ( ( isset( $regionlist[$region] ) ) && ( $regionlist[$region] == $v2 ) ) break;
                 $r = false;
                 break;
             case 'MissionType':
@@ -18,13 +26,14 @@ function fissurefilter( $voidinfo ) {
                 $r = false;
                 break;
             case 'Modifier':
+            case 'Tier':
                 if ( $voidinfo['Modifier'] == $v2 ) break;
                 if ( ( isset( $voidrelictierlist[$voidinfo['Modifier']] ) ) && ( $voidrelictierlist[$voidinfo['Modifier']] == $v2 ) ) break;
                 $r = false;
                 break;
             case 'Node':
-                if ( $voidinfo['Node'] == $v2 ) break;
-                if ( ( isset( $solnodelist[$voidinfo['Node']] ) ) && ( $solnodelist[$voidinfo['Node']] == $v2 ) ) break;
+                if ( $node == $v2 ) break;
+                if ( ( isset( $solnodelist[$node] ) ) && ( isset( $solnodelist[$node]['name'] ) ) && ( $solnodelist[$node]['name'] == $v2 ) ) break;
                 $r = false;
                 break;
             case 'action':

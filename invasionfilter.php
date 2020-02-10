@@ -9,7 +9,7 @@ function invasionfilter( $invasioninfo ) {
             switch( $k2 ) {
             case 'Node':
                 if ( $invasioninfo['Node'] == $v2 ) break;
-                if ( ( isset( $solnodelist[$invasioninfo['Node']] ) ) && ( $solnodelist[$invasioninfo['Node']] == $v2 ) ) break;
+                if ( ( isset( $solnodelist[$invasioninfo['Node']] ) ) && ( isset( $solnodelist[$invasioninfo['Node']]['name'] ) ) && ( $solnodelist[$invasioninfo['Node']]['name'] == $v2 ) ) break;
                 $r = false;
                 break;
             case 'Item':

@@ -1,382 +1,1498 @@
-// warframe のサーバから送られてくる、ノード定数と、その翻訳文字列
 {
-    "SolNode1":   "Galatea",
-    "SolNode2":   "Aphrodite",
-    "SolNode3":   "Cordelia",
-    "SolNode4":   "Archeron",
-    "SolNode5":   "Perdita",
-    "SolNode6":   "Despina",
-    "SolNode7":   "Epimetheus",
-    "SolNode8":   "Nix",
-    "SolNode9":   "Rosalind",
-    "SolNode10":  "Thebe",
-    "SolNode11":  "Tharsis",
-    "SolNode12":  "Elion",
-    "SolNode13":  "Bianca",
-    "SolNode14":  "Ultor",
-    "SolNode15":  "Pacific",
-    "SolNode16":  "Augustus",
-    "SolNode17":  "Proteus",
-    "SolNode18":  "Rhea",
-    "SolNode19":  "Enceladus",
-    "SolNode20":  "Telesto",
-    "SolNode21":  "Narcissus",
-    "SolNode22":  "Tessera",
-    "SolNode23":  "Cytherean",
-    "SolNode24":  "Oro",
-    "SolNode25":  "Callisto",
-    "SolNode26":  "Lith",
-    "SolNode27":  "E Prime",
-    "SolNode28":  "Theminus",
-    "SolNode29":  "Oberon",
-    "SolNode30":  "Olympus",
-    "SolNode31":  "Anthe",
-    "SolNode32":  "Tethys",
-    "SolNode33":  "Ariel",
-    "SolNode34":  "Sycorax",
-    "SolNode35":  "Arcadia",
-    "SolNode36":  "Matialis",
-    "SolNode37":  "Pallene",
-    "SolNode38":  "Minthe",
-    "SolNode39":  "Everest",
-    "SolNode40":  "Prospero",
-    "SolNode41":  "Arval",
-    "SolNode42":  "Helene",
-    "SolNode43":  "Cerberus",
-    "SolNode44":  "Mimas",
-    "SolNode45":  "Ara",
-    "SolNode46":  "Spear",
-    "SolNode47":  "Janus",
-    "SolNode48":  "Regna",
-    "SolNode49":  "Larissa",
-    "SolNode50":  "Numa",
-    "SolNode51":  "Hades",
-    "SolNode52":  "Portia",
-    "SolNode53":  "Themisto",
-    "SolNode54":  "Silvanus",
-    "SolNode55":  "Methone",
-    "SolNode56":  "Cypress",
-    "SolNode57":  "Sao",
-    "SolNode58":  "Hellas",
-    "SolNode59":  "Eurasia",
-    "SolNode60":  "Caliban",
-    "SolNode61":  "Ishtar",
-    "SolNode62":  "Neso",
-    "SolNode63":  "Mantle",
-    "SolNode64":  "Umbriel",
-    "SolNode65":  "Gradivus",
-    "SolNode66":  "Unda",
-    "SolNode67":  "Dione",
-    "SolNode68":  "Vallis",
-    "SolNode69":  "Ophelia",
-    "SolNode70":  "Cassini",
-    "SolNode71":  "Vesper",
-    "SolNode72":  "Outer Terminus",
-    "SolNode73":  "Ananke",
-    "SolNode74":  "Carme",
-    "SolNode75":  "Cervantes",
-    "SolNode76":  "Hydra",
-    "SolNode77":  "Cupid",
-    "SolNode78":  "Triton",
-    "SolNode79":  "Cambria",
-    "SolNode80":  "Phoebe",
-    "SolNode81":  "Palus",
-    "SolNode82":  "Calypso",
-    "SolNode83":  "Cressida",
-    "SolNode84":  "Nereid",
-    "SolNode85":  "Gaia",
-    "SolNode86":  "Aegaeon",
-    "SolNode87":  "Ganymede",
-    "SolNode88":  "Adrastea",
-    "SolNode89":  "Mariana",
-    "SolNode90":  "Miranda",
-    "SolNode91":  "Iapetus",
-    "SolNode92":  "Charon",
-    "SolNode93":  "Keeler",
-    "SolNode94":  "Apollodorus",
-    "SolNode95":  "Thalassa",
-    "SolNode96":  "Titan",
-    "SolNode97":  "Amalthea",
-    "SolNode98":  "Desdemona",
-    "SolNode99":  "War",
-    "SolNode100": "Elara",
-    "SolNode101": "Kiliken",
-    "SolNode102": "Oceanum",
-    "SolNode103": "M Prime",
-    "SolNode104": "Fossa",
-    "SolNode105": "Titania",
-    "SolNode106": "Alator",
-    "SolNode107": "Venera",
-    "SolNode108": "Tolstoj",
-    "SolNode109": "Linea",
-    "SolNode110": "Hyperion",
-    "SolNode111": "Juliet",
-    "SolNode112": "Setebos",
-    "SolNode113": "Ares",
-    "SolNode114": "Puck",
-    "SolNode115": "Quirinus",
-    "SolNode116": "Mab",
-    "SolNode117": "Naiad",
-    "SolNode118": "Laomedeia",
-    "SolNode119": "Caloris",
-    "SolNode120": "Halimede",
-    "SolNode121": "Carpo",
-    "SolNode122": "Stephano",
-    "SolNode123": "V Prime",
-    "SolNode124": "Trinculo",
-    "SolNode125": "Io",
-    "SolNode126": "Metis",
-    "SolNode127": "Psamathe",
-    "SolNode128": "E Gate",
-    "SolNode129": "オーブ峡谷",
-    "SolNode130": "Lares",
-    "SolNode131": "Pallas",
-    "SolNode132": "Bode",
-    "SolNode133": "Vedic",
-    "SolNode134": "Varro",
-    "SolNode135": "Thon",
-    "SolNode136": "Olla",
-    "SolNode137": "Nuovo",
-    "SolNode138": "Ludi",
-    "SolNode139": "Lex",
-    "SolNode140": "Kiste",
-    "SolNode141": "Ker",
-    "SolNode142": "Hapke",
-    "SolNode143": "Gefion",
-    "SolNode144": "Exta",
-    "SolNode145": "Egeria",
-    "SolNode146": "Draco",
-    "SolNode147": "Cinxia",
-    "SolNode148": "Cerium",
-    "SolNode149": "Casta",
-    "SolNode150": "Albedo",
-    "SolNode151": "Acanth",
-    "SolNode152": "Ascar",
-    "SolNode153": "Brugia",
-    "SolNode154": "Candiru",
-    "SolNode155": "Cosis",
-    "SolNode156": "Cyath",
-    "SolNode157": "Giardia",
-    "SolNode158": "Gnathos",
-    "SolNode159": "Lepis",
-    "SolNode160": "Histo",
-    "SolNode161": "Hymeno",
-    "SolNode162": "Isos",
-    "SolNode163": "Ixodes",
-    "SolNode164": "Kala-azar",
-    "SolNode165": "Sporid",
-    "SolNode166": "Nimus",
-    "SolNode167": "Oestrus",
-    "SolNode168": "Phalan",
-    "SolNode169": "Psoro",
-    "SolNode170": "Ranova",
-    "SolNode171": "Saxis",
-    "SolNode172": "Xini",
-    "SolNode173": "Solium",
-    "SolNode174": "Sparga",
-    "SolNode175": "Naeglar",
-    "SolNode176": "Viver",
-    "SolNode177": "Kappa",
-    "SolNode178": "Hyosube",
-    "SolNode179": "Jengu",
-    "SolNode180": "Undine",
-    "SolNode181": "Adaro",
-    "SolNode182": "Camenae",
-    "SolNode183": "Vodyanoi",
-    "SolNode184": "Rusalka",
-    "SolNode185": "Berehynia",
-    "SolNode186": "Phithale",
-    "SolNode187": "Selkie",
-    "SolNode188": "Kelpie",
-    "SolNode189": "Naga",
-    "SolNode190": "Nakki",
-    "SolNode191": "Marid",
-    "SolNode192": "Tikoloshe",
-    "SolNode193": "Merrow",
-    "SolNode194": "Ponaturi",
-    "SolNode195": "Hydron",
-    "SolNode196": "Charybdis",
-    "SolNode197": "Graeae",
-    "SolNode198": "Scylla",
-    "SolNode199": "Yam",
-    "SolNode200": "Veles",
-    "SolNode201": "Tiamat",
-    "SolNode202": "Yemaja",
-    "SolNode203": "Abaddon",
-    "SolNode204": "Armaros",
-    "SolNode205": "Baal",
-    "SolNode206": "Eligor",
-    "SolNode207": "Gamygyn",
-    "SolNode208": "Lillith",
-    "SolNode209": "Morax",
-    "SolNode210": "Naamah",
-    "SolNode211": "Ose",
-    "SolNode212": "Paimon",
-    "SolNode213": "Shax",
-    "SolNode214": "Sorath",
-    "SolNode215": "Valac",
-    "SolNode216": "Valefor",
-    "SolNode217": "Orias",
-    "SolNode218": "Zagan",
-    "SolNode219": "Beleth",
-    "SolNode220": "Kokabiel",
-    "SolNode221": "Neruda",
-    "SolNode222": "Eminescu",
-    "SolNode223": "Boethius",
-    "SolNode224": "Odin",
-    "SolNode225": "Suisei",
-    "SolNode226": "Pantheon",
-    "SolNode227": "Verdi",
-    "SolNode228": "エイドロンの草原",
-    "SolNode300": "Plato",
-    "SolNode301": "Grimaldi",
-    "SolNode302": "Tycho",
-    "SolNode304": "Copernics",
-    "SolNode305": "Stofler",
-    "SolNode306": "Pavlov",
-    "SolNode307": "Zeipel",
-    "SolNode308": "Apollo",
-    "SolNode400": "Teshub",
-    "SolNode401": "Hepit",
-    "SolNode402": "Taranis",
-    "SolNode403": "Tiwaz",
-    "SolNode404": "Stribog",
-    "SolNode405": "Ani",
-    "SolNode406": "Ukko",
-    "SolNode407": "Oxomoco",
-    "SolNode408": "Belenus",
-    "SolNode409": "Mot",
-    "SolNode410": "Aten",
-    "SolNode411": "Marduk",
-    "SolNode412": "Mithra",
-    "SolNode413": "SolNode422",
-    "SolNode706": "オロキン遺跡船 確保",
-    "SolNode707": "オロキン遺跡船 防衛",
-    "SolNode708": "オロキン遺跡船 掃滅",
-    "SolNode709": "オロキン遺跡船 機動防衛",
-    "SolNode710": "オロキン遺跡船 妨害",
-    "SolNode711": "オロキン遺跡船 耐久",
-    "SolNode712": "オロキン遺跡船 抹殺",
-    "SolNode713": "遺跡船 使者抹殺",
-    "SolNode740": "ロパロリスト",
-    "SolNode741": "Koro",
-    "SolNode742": "Nabuk",
-    "SolNode743": "Rotuma",
-    "SolNode744": "Taveuni",
-    "SolNode745": "Tamu",
-    "SolNode746": "Dakata",
-    "SolNode747": "Pago",
-    "SolNode748": "Garus",
-    "SolNode901": "Caduceus",
-    "SolNode902": "Montes",
-    "SolNode903": "Erpo",
-    "SolNode904": "Syrtis",
-    "SolNode905": "Galilea",
-    "SolNode906": "Pandora",
-    "SolNode907": "Caelus",
-    "SolNode908": "Salacia",
-    "SettlementNode1":  "Roche",
-    "SettlementNode2":  "Skyresh",
-    "SettlementNode3":  "Stickney",
-    "SettlementNode4":  "Drunlo",
-    "SettlementNode5":  "Grildrig",
-    "SettlementNode6":  "Limtoc",
-    "SettlementNode7":  "Hall",
-    "SettlementNode8":  "Reldresal",
-    "SettlementNode9":  "Clustril",
-    "SettlementNode10": "Kepler",
-    "SettlementNode11": "Gulliver",
-    "SettlementNode12": "Monolith",
-    "SettlementNode13": "D'Arrest",
-    "SettlementNode14": "Shklovsky",
-    "SettlementNode15": "Sharpless",
-    "SettlementNode16": "Wendell",
-    "SettlementNode17": "Flimnap",
-    "SettlementNode18": "Opik",
-    "SettlementNode19": "Todd",
-    "SettlementNode20": "Iliad",
-    "MercuryHUB": "Larunda Relay",
-    "VenusHUB":   "Vesper Relay",
-    "EarthHUB":   "Strata Relay",
-    "SaturnHUB":  "Kronia Relay",
-    "ErisHUB":    "Kuiper Relay",
-    "EuropaHUB":  "Leonov Relay",
-    "PlutoHUB":   "Orcus Relay",
-    "EventNode0":   "Balor",
-    "EventNode1":   "Tethra",
-    "EventNode2":   "Operation Gate Crash",
-    "EventNode3":   "Elatha",
-    "EventNode4":   "Bres",
-    "EventNode5":   "Birog",
-    "EventNode6":   "Tyl Reygor Seal Lab",
-    "EventNode7":   "Buarainech",
-    "EventNode8":   "Corb",
-    "EventNode9":   "Operation Gate Crash Pt. 2",
-    "EventNode10":  "Lugh",
-    "EventNode11":  "Nemed",
-    "EventNode12":  "Operation Cryotic Front",
-    "EventNode13":  "Shifting Sands",
-    "EventNode14":  "Gate Crash",
-    "EventNode15":  "Operation Cryotic Front",
-    "EventNode16":  "Operation Cryotic Front",
-    "EventNode17":  "Operation Cryotic Front",
-    "EventNode18":  "Operation Blackout Pt. 1",
-    "EventNode19":  "Mars",
-    "EventNode20":  "Tyl Regor Sea Lab",
-    "EventNode22":  "Tyl Regor Sea Lab",
-    "EventNode24":  "Earth",
-    "EventNode25":  "Earth",
-    "EventNode26":  "Earth",
-    "EventNode27":  "Void",
-    "EventNode28":  "Saturn",
-    "EventNode29":  "Saturn",
-    "EventNode30":  "Ganymede",
-    "EventNode31":  "Ganymede",
-    "EventNode32":  "Ganymede",
-    "EventNode33":  "Ganymede",
-    "EventNode761": "The Index",
-    "EventNode762": "The Index Pt. 2",
-    "EventNode763": "The Index Endurance",
-    "PvpNode0":  "Conclave Capture the Cephalon",
-    "PvpNode1":  "Conclave",
-    "PvpNode2":  "Conclave",
-    "PvpNode3":  "Conclave Capture the Cephalon",
-    "PvpNode4":  "Conclave",
-    "PvpNode5":  "Conclave",
-    "PvpNode6":  "Conclave",
-    "PvpNode7":  "Conclave",
-    "PvpNode8":  "Conclave",
-    "PvpNode9":  "Conclave Team Domination",
-    "PvpNode10": "Conclave Domination",
-    "PvpNode11": "Conclave Domination",
-    "PvpNode12": "Conclave Domination",
-    "PvpNode13": "Tactical Alert: Snoball Fight",
-    "PvpNode14": "Conclave: Quick Steel",
-    "ClanNode0":  "Romula",
-    "ClanNode1":  "Malva",
-    "ClanNode2":  "Coba",
-    "ClanNode3":  "Tikal",
-    "ClanNode4":  "Sinai",
-    "ClanNode5":  "Cameria",
-    "ClanNode6":  "Larzac",
-    "ClanNode7":  "Cholistan",
-    "ClanNode8":  "Kadesh",
-    "ClanNode9":  "Wahiba",
-    "ClanNode10": "Memphis",
-    "ClanNode11": "Zeugma",
-    "ClanNode12": "Caracol",
-    "ClanNode13": "Piscinas",
-    "ClanNode14": "Amarna",
-    "ClanNode15": "Sangeru",
-    "ClanNode16": "Ur",
-    "ClanNode17": "Assur",
-    "ClanNode18": "Akkad",
-    "ClanNode19": "Zabala",
-    "ClanNode20": "Yursa",
-    "ClanNode21": "Kelashin",
-    "ClanNode22": "Seimeni",
-    "ClanNode23": "Gabii",
-    "ClanNode24": "Sechura",
-    "ClanNode25": "Hieracon",
-    "/Lotus/Types/Keys/SortieBossKeyPhorid": "Sortie Boss: Phorid"
+    "SettlementNode1": {
+        "name": "Roche",
+        "region": 16
+    },
+    "SettlementNode2": {
+        "name": "Skyresh",
+        "region": 16
+    },
+    "SettlementNode3": {
+        "name": "Stickney",
+        "region": 16
+    },
+    "SettlementNode4": {
+        "name": "Drunlo",
+        "region": 16
+    },
+    "SettlementNode5": {
+        "name": "Grildrig",
+        "region": 16
+    },
+    "SettlementNode6": {
+        "name": "Limtoc",
+        "region": 16
+    },
+    "SettlementNode7": {
+        "name": "Hall",
+        "region": 16
+    },
+    "SettlementNode8": {
+        "name": "Reldresal",
+        "region": 16
+    },
+    "SettlementNode9": {
+        "name": "Clustril",
+        "region": 16
+    },
+    "SettlementNode10": {
+        "name": "Kepler",
+        "region": 16
+    },
+    "SettlementNode11": {
+        "name": "Gulliver",
+        "region": 16
+    },
+    "SettlementNode12": {
+        "name": "Monolith",
+        "region": 16
+    },
+    "SettlementNode13": {
+        "name": "D'Arrest",
+        "region": 16
+    },
+    "SettlementNode14": {
+        "name": "Shklovsky",
+        "region": 16
+    },
+    "SettlementNode15": {
+        "name": "Sharpless",
+        "region": 16
+    },
+    "SettlementNode16": {
+        "name": "Wendell",
+        "region": 16
+    },
+    "SettlementNode17": {
+        "name": "Flimnap",
+        "region": 16
+    },
+    "SettlementNode18": {
+        "name": "Opik",
+        "region": 16
+    },
+    "SettlementNode12": {
+        "name": "Todd",
+        "region": 16
+    },
+    "SettlementNode20": {
+        "name": "Iliad",
+        "region": 16
+    },
+    "SolNode0": {
+        "name": "SolNode0"
+    },
+    "SolNode1": {
+        "name": "Galatea",
+        "region": 8
+    },
+    "SolNode2": {
+        "name": "Aphrodite",
+        "region": 2
+    },
+    "SolNode3": {
+        "name": "Cordelia",
+        "region": 7
+    },
+    "SolNode4": {
+        "name": "Acheron",
+        "region": 9
+    },
+    "SolNode5": {
+        "name": "Perdita",
+        "region": 7
+    },
+    "SolNode6": {
+        "name": "Despina",
+        "region": 8
+    },
+    "SolNode7": {
+        "name": "Epimetheus",
+        "region": 6
+    },
+    "SolNode8": {
+        "name": "Nix",
+        "region": 9
+    },
+    "SolNode9": {
+        "name": "Rosalind",
+        "region": 7
+    },
+    "SolNode10": {
+        "name": "Thebe",
+        "region": 5
+    },
+    "SolNode11": {
+        "name": "Tharsis",
+        "region": 4
+    },
+    "SolNode12": {
+        "name": "Elion",
+        "region": 1
+    },
+    "SolNode13": {
+        "name": "Bianca",
+        "region": 7
+    },
+    "SolNode14": {
+        "name": "Ultor",
+        "region": 4
+    },
+    "SolNode15": {
+        "name": "Pacific",
+        "region": 3
+    },
+    "SolNode16": {
+        "name": "Augustus",
+        "region": 4
+    },
+    "SolNode17": {
+        "name": "Proteus",
+        "region": 8
+    },
+    "SolNode18": {
+        "name": "Rhea",
+        "region": 6
+    },
+    "SolNode19": {
+        "name": "Enceladus",
+        "region": 6
+    },
+    "SolNode20": {
+        "name": "Telesto",
+        "region": 6
+    },
+    "SolNode21": {
+        "name": "Narcissus",
+        "region": 9
+    },
+    "SolNode22": {
+        "name": "Tessera",
+        "region": 2
+    },
+    "SolNode23": {
+        "name": "Cytherean",
+        "region": 2
+    },
+    "SolNode24": {
+        "name": "Oro",
+        "region": 3
+    },
+    "SolNode25": {
+        "name": "Callisto",
+        "region": 5
+    },
+    "SolNode26": {
+        "name": "Lith",
+        "region": 3
+    },
+    "SolNode27": {
+        "name": "E Prime",
+        "region": 3
+    },
+    "SolNode28": {
+        "name": "Terminus",
+        "region": 1
+    },
+    "SolNode29": {
+        "name": "Oberon",
+        "region": 7
+    },
+    "SolNode30": {
+        "name": "Olympus",
+        "region": 4
+    },
+    "SolNode31": {
+        "name": "Anthe",
+        "region": 6
+    },
+    "SolNode32": {
+        "name": "Tethys",
+        "region": 6
+    },
+    "SolNode33": {
+        "name": "Ariel",
+        "region": 7
+    },
+    "SolNode34": {
+        "name": "Sycorax",
+        "region": 7
+    },
+    "SolNode35": {
+        "name": "Arcadia",
+        "region": 4
+    },
+    "SolNode36": {
+        "name": "Martialis",
+        "region": 4
+    },
+    "SolNode37": {
+        "name": "Pallene",
+        "region": 6
+    },
+    "SolNode38": {
+        "name": "Minthe",
+        "region": 9
+    },
+    "SolNode39": {
+        "name": "Everest",
+        "region": 3
+    },
+    "SolNode40": {
+        "name": "Prospero",
+        "region": 7
+    },
+    "SolNode41": {
+        "name": "Arval",
+        "region": 4
+    },
+    "SolNode42": {
+        "name": "Helene",
+        "region": 6
+    },
+    "SolNode43": {
+        "name": "Cerberus",
+        "region": 9
+    },
+    "SolNode44": {
+        "name": "Mimas",
+        "region": 6
+    },
+    "SolNode45": {
+        "name": "Ara",
+        "region": 4
+    },
+    "SolNode46": {
+        "name": "Spear",
+        "region": 4
+    },
+    "SolNode47": {
+        "name": "Janus",
+        "region": 6
+    },
+    "SolNode48": {
+        "name": "Regna",
+        "region": 9
+    },
+    "SolNode49": {
+        "name": "Larissa",
+        "region": 8
+    },
+    "SolNode50": {
+        "name": "Numa",
+        "region": 6
+    },
+    "SolNode51": {
+        "name": "Hades",
+        "region": 9
+    },
+    "SolNode52": {
+        "name": "Portia",
+        "region": 7
+    },
+    "SolNode53": {
+        "name": "Themisto",
+        "region": 5
+    },
+    "SolNode54": {
+        "name": "Silvanus",
+        "region": 4
+    },
+    "SolNode55": {
+        "name": "Methone",
+        "region": 6
+    },
+    "SolNode56": {
+        "name": "Cypress",
+        "region": 9
+    },
+    "SolNode57": {
+        "name": "Sao",
+        "region": 8
+    },
+    "SolNode58": {
+        "name": "Hellas",
+        "region": 4
+    },
+    "SolNode59": {
+        "name": "Eurasia",
+        "region": 3
+    },
+    "SolNode60": {
+        "name": "Caliban",
+        "region": 7
+    },
+    "SolNode61": {
+        "name": "Ishtar",
+        "region": 2
+    },
+    "SolNode62": {
+        "name": "Neso",
+        "region": 8
+    },
+    "SolNode63": {
+        "name": "Mantle",
+        "region": 3
+    },
+    "SolNode64": {
+        "name": "Umbriel",
+        "region": 7
+    },
+    "SolNode65": {
+        "name": "Gradivus",
+        "region": 4
+    },
+    "SolNode66": {
+        "name": "Unda",
+        "region": 2
+    },
+    "SolNode67": {
+        "name": "Dione",
+        "region": 6
+    },
+    "SolNode68": {
+        "name": "Vallis",
+        "region": 4
+    },
+    "SolNode69": {
+        "name": "Ophelia",
+        "region": 7
+    },
+    "SolNode70": {
+        "name": "Cassini",
+        "region": 6
+    },
+    "SolNode71": {
+        "name": "Vesper",
+        "region": 2
+    },
+    "SolNode72": {
+        "name": "Outer Terminus",
+        "region": 9
+    },
+    "SolNode73": {
+        "name": "Ananke",
+        "region": 5
+    },
+    "SolNode74": {
+        "name": "Carme",
+        "region": 5
+    },
+    "SolNode75": {
+        "name": "Cervantes",
+        "region": 3
+    },
+    "SolNode76": {
+        "name": "Hydra",
+        "region": 9
+    },
+    "SolNode77": {
+        "name": "Cupid",
+        "region": 7
+    },
+    "SolNode78": {
+        "name": "Triton",
+        "region": 8
+    },
+    "SolNode79": {
+        "name": "Cambria",
+        "region": 3
+    },
+    "SolNode80": {
+        "name": "Phoebe",
+        "region": 6
+    },
+    "SolNode81": {
+        "name": "Palus",
+        "region": 9
+    },
+    "SolNode82": {
+        "name": "Calypso",
+        "region": 6
+    },
+    "SolNode83": {
+        "name": "Cressida",
+        "region": 7
+    },
+    "SolNode84": {
+        "name": "Nereid",
+        "region": 8
+    },
+    "SolNode85": {
+        "name": "Gaia",
+        "region": 3
+    },
+    "SolNode86": {
+        "name": "Aegaeon",
+        "region": 6
+    },
+    "SolNode87": {
+        "name": "Ganymede",
+        "region": 5
+    },
+    "SolNode88": {
+        "name": "Adrastea",
+        "region": 5
+    },
+    "SolNode89": {
+        "name": "Mariana",
+        "region": 3
+    },
+    "SolNode90": {
+        "name": "Miranda"
+    },
+    "SolNode91": {
+        "name": "Iapetus",
+        "region": 6
+    },
+    "SolNode92": {
+        "name": "Charon",
+        "region": 9
+    },
+    "SolNode93": {
+        "name": "Keeler",
+        "region": 6
+    },
+    "SolNode94": {
+        "name": "Apollodorus",
+        "region": 1
+    },
+    "SolNode95": {
+        "name": "Thalassa",
+        "region": 8
+    },
+    "SolNode96": {
+        "name": "Titan",
+        "region": 6
+    },
+    "SolNode97": {
+        "name": "Amalthea",
+        "region": 5
+    },
+    "SolNode98": {
+        "name": "Desdemona",
+        "region": 7
+    },
+    "SolNode99": {
+        "name": "War",
+        "region": 4
+    },
+    "SolNode100": {
+        "name": "Elara",
+        "region": 5
+    },
+    "SolNode101": {
+        "name": "Kiliken",
+        "region": 2
+    },
+    "SolNode102": {
+        "name": "Oceanum",
+        "region": 9
+    },
+    "SolNode103": {
+        "name": "M Prime",
+        "region": 1
+    },
+    "SolNode104": {
+        "name": "Fossa",
+        "region": 2
+    },
+    "SolNode105": {
+        "name": "Titania",
+        "region": 7
+    },
+    "SolNode106": {
+        "name": "Alator",
+        "region": 4
+    },
+    "SolNode107": {
+        "name": "Venera",
+        "region": 2
+    },
+    "SolNode108": {
+        "name": "Tolstoj",
+        "region": 1
+    },
+    "SolNode109": {
+        "name": "Linea",
+        "region": 2
+    },
+    "SolNode110": {
+        "name": "Hyperion",
+        "region": 6
+    },
+    "SolNode111": {
+        "name": "Juliet",
+        "region": 7
+    },
+    "SolNode112": {
+        "name": "Setebos",
+        "region": 7
+    },
+    "SolNode113": {
+        "name": "Ares",
+        "region": 4
+    },
+    "SolNode114": {
+        "name": "Puck",
+        "region": 7
+    },
+    "SolNode115": {
+        "name": "Quirinus",
+        "region": 4
+    },
+    "SolNode116": {
+        "name": "Mab",
+        "region": 7
+    },
+    "SolNode117": {
+        "name": "Naiad",
+        "region": 8
+    },
+    "SolNode118": {
+        "name": "Laomedeia",
+        "region": 8
+    },
+    "SolNode119": {
+        "name": "Caloris",
+        "region": 1
+    },
+    "SolNode120": {
+        "name": "Halimede",
+        "region": 8
+    },
+    "SolNode121": {
+        "name": "Carpo",
+        "region": 5
+    },
+    "SolNode122": {
+        "name": "Stephano",
+        "region": 7
+    },
+    "SolNode123": {
+        "name": "V Prime",
+        "region": 2
+    },
+    "SolNode124": {
+        "name": "Trinculo",
+        "region": 7
+    },
+    "SolNode125": {
+        "name": "Io",
+        "region": 5
+    },
+    "SolNode126": {
+        "name": "Metis",
+        "region": 5
+    },
+    "SolNode127": {
+        "name": "Psamathe",
+        "region": 8
+    },
+    "SolNode128": {
+        "name": "E Gate",
+        "region": 2
+    },
+    "SolNode129": {
+        "name": "オーブ峡谷",
+        "region": 2
+    },
+    "SolNode130": {
+        "name": "Lares",
+        "region": 1
+    },
+    "SolNode131": {
+        "name": "Pallas",
+        "region": 10
+    },
+    "SolNode132": {
+        "name": "Bode",
+        "region": 10
+    },
+    "SolNode133": {
+        "name": "Vedic",
+        "region": 10
+    },
+    "SolNode134": {
+        "name": "Varro",
+        "region": 10
+    },
+    "SolNode135": {
+        "name": "Thon",
+        "region": 10
+    },
+    "SolNode136": {
+        "name": "Olla",
+        "region": 10
+    },
+    "SolNode137": {
+        "name": "Nuovo",
+        "region": 10
+    },
+    "SolNode138": {
+        "name": "Ludi",
+        "region": 10
+    },
+    "SolNode139": {
+        "name": "Lex",
+        "region": 10
+    },
+    "SolNode140": {
+        "name": "Kiste",
+        "region": 10
+    },
+    "SolNode141": {
+        "name": "Ker",
+        "region": 10
+    },
+    "SolNode142": {
+        "name": "Hapke",
+        "region": 10
+    },
+    "SolNode143": {
+        "name": "Gefion",
+        "region": 10
+    },
+    "SolNode144": {
+        "name": "Exta",
+        "region": 10
+    },
+    "SolNode145": {
+        "name": "Egeria",
+        "region": 10
+    },
+    "SolNode146": {
+        "name": "Draco",
+        "region": 10
+    },
+    "SolNode147": {
+        "name": "Cinxia",
+        "region": 10
+    },
+    "SolNode148": {
+        "name": "Cerium",
+        "region": 10
+    },
+    "SolNode149": {
+        "name": "Casta",
+        "region": 10
+    },
+    "SolNode150": {
+        "name": "Albedo",
+        "region": 10
+    },
+    "SolNode151": {
+        "name": "Acanth",
+        "region": 11
+    },
+    "SolNode152": {
+        "name": "Ascar",
+        "region": 11
+    },
+    "SolNode153": {
+        "name": "Brugia",
+        "region": 11
+    },
+    "SolNode154": {
+        "name": "Candiru",
+        "region": 11
+    },
+    "SolNode155": {
+        "name": "Cosis",
+        "region": 11
+    },
+    "SolNode156": {
+        "name": "Cyath",
+        "region": 11
+    },
+    "SolNode157": {
+        "name": "Giardia",
+        "region": 11
+    },
+    "SolNode158": {
+        "name": "Gnathos",
+        "region": 11
+    },
+    "SolNode159": {
+        "name": "Lepis",
+        "region": 11
+    },
+    "SolNode160": {
+        "name": "Histo",
+        "region": 11
+    },
+    "SolNode161": {
+        "name": "Hymeno",
+        "region": 11
+    },
+    "SolNode162": {
+        "name": "Isos",
+        "region": 11
+    },
+    "SolNode163": {
+        "name": "Ixodes",
+        "region": 11
+    },
+    "SolNode164": {
+        "name": "Kala-azar",
+        "region": 11
+    },
+    "SolNode165": {
+        "name": "Sporid",
+        "region": 11
+    },
+    "SolNode166": {
+        "name": "Nimus",
+        "region": 11
+    },
+    "SolNode167": {
+        "name": "Oestrus",
+        "region": 11
+    },
+    "SolNode168": {
+        "name": "Phalan",
+        "region": 11
+    },
+    "SolNode169": {
+        "name": "Psoro",
+        "region": 11
+    },
+    "SolNode170": {
+        "name": "Ranova",
+        "region": 11
+    },
+    "SolNode171": {
+        "name": "Saxis",
+        "region": 11
+    },
+    "SolNode172": {
+        "name": "Xini",
+        "region": 11
+    },
+    "SolNode173": {
+        "name": "Solium",
+        "region": 11
+    },
+    "SolNode174": {
+        "name": "Sparga",
+        "region": 11
+    },
+    "SolNode175": {
+        "name": "Naeglar",
+        "region": 11
+    },
+    "SolNode176": {
+        "name": "Viver",
+        "region": 11
+    },
+    "SolNode177": {
+        "name": "Kappa",
+        "region": 12
+    },
+    "SolNode178": {
+        "name": "Hyosube",
+        "region": 12
+    },
+    "SolNode179": {
+        "name": "Jengu",
+        "region": 12
+    },
+    "SolNode180": {
+        "name": "Undine",
+        "region": 12
+    },
+    "SolNode181": {
+        "name": "Adaro",
+        "region": 12
+    },
+    "SolNode182": {
+        "name": "Camenae",
+        "region": 12
+    },
+    "SolNode183": {
+        "name": "Vodyanoi",
+        "region": 12
+    },
+    "SolNode184": {
+        "name": "Rusalka",
+        "region": 12
+    },
+    "SolNode185": {
+        "name": "Berehynia",
+        "region": 12
+    },
+    "SolNode186": {
+        "name": "Phithale",
+        "region": 12
+    },
+    "SolNode187": {
+        "name": "Selkie",
+        "region": 12
+    },
+    "SolNode188": {
+        "name": "Kelpie",
+        "region": 12
+    },
+    "SolNode189": {
+        "name": "Naga",
+        "region": 12
+    },
+    "SolNode190": {
+        "name": "Nakki",
+        "region": 12
+    },
+    "SolNode191": {
+        "name": "Marid",
+        "region": 12
+    },
+    "SolNode192": {
+        "name": "Tikoloshe",
+        "region": 12
+    },
+    "SolNode193": {
+        "name": "Merrow",
+        "region": 12
+    },
+    "SolNode194": {
+        "name": "Ponaturi",
+        "region": 12
+    },
+    "SolNode195": {
+        "name": "Hydron",
+        "region": 12
+    },
+    "SolNode196": {
+        "name": "Charybdis",
+        "region": 12
+    },
+    "SolNode197": {
+        "name": "Graeae",
+        "region": 12
+    },
+    "SolNode198": {
+        "name": "Scylla",
+        "region": 12
+    },
+    "SolNode199": {
+        "name": "Yam",
+        "region": 12
+    },
+    "SolNode200": {
+        "name": "Veles",
+        "region": 12
+    },
+    "SolNode201": {
+        "name": "Tiamat",
+        "region": 12
+    },
+    "SolNode202": {
+        "name": "Yemaja",
+        "region": 12
+    },
+    "SolNode203": {
+        "name": "Abaddon",
+        "region": 13
+    },
+    "SolNode204": {
+        "name": "Armaros",
+        "region": 13
+    },
+    "SolNode205": {
+        "name": "Baal",
+        "region": 13
+    },
+    "SolNode206": {
+        "name": "Eligor",
+        "region": 13
+    },
+    "SolNode207": {
+        "name": "Gamygyn",
+        "region": 13
+    },
+    "SolNode208": {
+        "name": "Lillith",
+        "region": 13
+    },
+    "SolNode209": {
+        "name": "Morax",
+        "region": 13
+    },
+    "SolNode210": {
+        "name": "Naamah",
+        "region": 13
+    },
+    "SolNode211": {
+        "name": "Ose",
+        "region": 13
+    },
+    "SolNode212": {
+        "name": "Paimon",
+        "region": 13
+    },
+    "SolNode213": {
+        "name": "Shax",
+        "region": 13
+    },
+    "SolNode214": {
+        "name": "Sorath",
+        "region": 13
+    },
+    "SolNode215": {
+        "name": "Valac",
+        "region": 13
+    },
+    "SolNode216": {
+        "name": "Valefor",
+        "region": 13
+    },
+    "SolNode217": {
+        "name": "Orias",
+        "region": 13
+    },
+    "SolNode218": {
+        "name": "Zagan",
+        "region": 13
+    },
+    "SolNode219": {
+        "name": "Beleth",
+        "region": 13
+    },
+    "SolNode220": {
+        "name": "Kokabiel",
+        "region": 13
+    },
+    "SolNode221": {
+        "name": "Neruda",
+        "region": 1
+    },
+    "SolNode222": {
+        "name": "Eminescu",
+        "region": 1
+    },
+    "SolNode223": {
+        "name": "Boethius",
+        "region": 1
+    },
+    "SolNode224": {
+        "name": "Odin",
+        "region": 1
+    },
+    "SolNode225": {
+        "name": "Suisei",
+        "region": 1
+    },
+    "SolNode226": {
+        "name": "Pantheon",
+        "region": 1
+    },
+    "SolNode227": {
+        "name": "Verdi",
+        "region": 1
+    },
+    "SolNode228": {
+        "name": "エイドロンの草原",
+        "region": 3
+    },
+    "SolNode300": {
+        "name": "Plato",
+        "region": 18
+    },
+    "SolNode301": {
+        "name": "Grimaldi",
+        "region": 18
+    },
+    "SolNode302": {
+        "name": "Tycho",
+        "region": 18
+    },
+    "SolNode304": {
+        "name": "Copernicus",
+        "region": 18
+    },
+    "SolNode305": {
+        "name": "Stöfler",
+        "region": 18
+    },
+    "SolNode306": {
+        "name": "Pavlov",
+        "region": 18
+    },
+    "SolNode307": {
+        "name": "Zeipel",
+        "region": 18
+    },
+    "SolNode308": {
+        "name": "Apollo",
+        "region": 18
+    },
+    "SolNode400": {
+        "name": "Teshub",
+        "region": 15
+    },
+    "SolNode401": {
+        "name": "Hepit",
+        "region": 15
+    },
+    "SolNode402": {
+        "name": "Taranis",
+        "region": 15
+    },
+    "SolNode403": {
+        "name": "Tiwaz",
+        "region": 15
+    },
+    "SolNode404": {
+        "name": "Stribog",
+        "region": 15
+    },
+    "SolNode405": {
+        "name": "Ani",
+        "region": 15
+    },
+    "SolNode406": {
+        "name": "Ukko",
+        "region": 15
+    },
+    "SolNode407": {
+        "name": "Oxomoco",
+        "region": 15
+    },
+    "SolNode408": {
+        "name": "Belenus",
+        "region": 15
+    },
+    "SolNode409": {
+        "name": "Mot",
+        "region": 15
+    },
+    "SolNode410": {
+        "name": "Aten",
+        "region": 15
+    },
+    "SolNode411": {
+        "name": "Marduk",
+        "region": 15
+    },
+    "SolNode412": {
+        "name": "Mithra",
+        "region": 15
+    },
+    "SolNode413": {
+        "name": "SolNode413",
+        "region": 15
+    },
+    "SolNode706": {
+        "name": "オロキン遺跡船 確保",
+        "region": 17
+    },
+    "SolNode707": {
+        "name": "オロキン遺跡船 防衛",
+        "region": 17
+    },
+    "SolNode708": {
+        "name": "オロキン遺跡船 掃滅",
+        "region": 17
+    },
+    "SolNode709": {
+        "name": "オロキン遺跡船 機動防衛",
+        "region": 17
+    },
+    "SolNode710": {
+        "name": "オロキン遺跡船 妨害",
+        "region": 17
+    },
+    "SolNode711": {
+        "name": "オロキン遺跡船 耐久",
+        "region": 17
+    },
+    "SolNode712": {
+        "name": "オロキン遺跡船 抹殺",
+        "region": 17
+    },
+    "SolNode713": {
+        "name": "遺跡船 使者抹殺",
+        "region": 17
+    },
+    "SolNode740": {
+        "name": "ロパロリスト",
+        "region": 5
+    },
+    "SolNode741": {
+        "name": "Koro",
+        "region": 19
+    },
+    "SolNode742": {
+        "name": "Nabuk",
+        "region": 19
+    },
+    "SolNode743": {
+        "name": "Rotuma",
+        "region": 19
+    },
+    "SolNode744": {
+        "name": "Taveuni",
+        "region": 19
+    },
+    "SolNode745": {
+        "name": "Tamu",
+        "region": 19
+    },
+    "SolNode746": {
+        "name": "Dakata",
+        "region": 19
+    },
+    "SolNode747": {
+        "name": "Pago",
+        "region": 19
+    },
+    "SolNode748": {
+        "name": "Garus",
+        "region": 19
+    },
+    "SolNode901": {
+        "name": "Caduceus"
+    },
+    "SolNode902": {
+        "name": "Montes",
+        "region": 2
+    },
+    "SolNode903": {
+        "name": "Erpo",
+        "region": 3
+    },
+    "SolNode904": {
+        "name": "Syrtis",
+        "region": 4
+    },
+    "SolNode905": {
+        "name": "Galilea",
+        "region": 5
+    },
+    "SolNode906": {
+        "name": "Pandora",
+        "region": 6
+    },
+    "SolNode907": {
+        "name": "Caelus",
+        "region": 7
+    },
+    "SolNode908": {
+        "name": "Salacia",
+        "region": 8
+    },
+    "MercuryHUB": {
+        "name": "Larunda Relay",
+        "region": 1
+    },
+    "VenusHUB": {
+        "name": "Vesper Relay",
+        "region": 2
+    },
+    "EarthHUB": {
+        "name": "Strata Relay",
+        "region": 3
+    },
+    "SaturnHUB": {
+        "name": "Kronia Relay",
+        "region": 6
+    },
+    "ErisHUB": {
+        "name": "Kuiper Relay",
+        "region": 11
+    },
+    "EuropaHUB": {
+        "name": "Leonov Relay",
+        "region": 13
+    },
+    "PlutoHUB": {
+        "name": "Orcus Relay",
+        "region": 9
+    },
+    "EventNode0": {
+        "name": "Balor"
+    },
+    "EventNode1": {
+        "name": "Tethra"
+    },
+    "EventNode2": {
+        "name": "Operation Gate Crash"
+    },
+    "EventNode3": {
+        "name": "Elatha"
+    },
+    "EventNode4": {
+        "name": "Proxy Rebellion"
+    },
+    "EventNode5": {
+        "name": "Birog"
+    },
+    "EventNode6": {
+        "name": "Tyl Reygor Seal Lab"
+    },
+    "EventNode7": {
+        "name": "Proxy Rebellion"
+    },
+    "EventNode8": {
+        "name": "Corb"
+    },
+    "EventNode9": {
+        "name": "Operation Gate Crash Pt. 2"
+    },
+    "EventNode10": {
+        "name": "Lugh"
+    },
+    "EventNode11": {
+        "name": "Nemed"
+    },
+    "EventNode12": {
+        "name": "Operation Cryotic Front"
+    },
+    "EventNode13": {
+        "name": "Shifting Sands"
+    },
+    "EventNode14": {
+        "name": "Gate Crash"
+    },
+    "EventNode15": {
+        "name": "Operation Cryotic Front"
+    },
+    "EventNode16": {
+        "name": "Operation Cryotic Front"
+    },
+    "EventNode17": {
+        "name": "Proxy Rebellion"
+    },
+    "EventNode18": {
+        "name": "Proxy Rebellion"
+    },
+    "EventNode19": {
+        "name": "Mars"
+    },
+    "EventNode20": {
+        "name": "Tyl Regor Sea Lab"
+    },
+    "EventNode22": {
+        "name": "Tyl Regor Sea Lab"
+    },
+    "EventNode24": {
+        "name": "Earth"
+    },
+    "EventNode25": {
+        "name": "Earth"
+    },
+    "EventNode26": {
+        "name": "Earth"
+    },
+    "EventNode27": {
+        "name": "Void"
+    },
+    "EventNode28": {
+        "name": "Saturn"
+    },
+    "EventNode29": {
+        "name": "Saturn"
+    },
+    "EventNode30": {
+        "name": "Ganymede"
+    },
+    "EventNode31": {
+        "name": "Ganymede"
+    },
+    "EventNode32": {
+        "name": "Ganymede"
+    },
+    "EventNode33": {
+        "name": "Ganymede"
+    },
+    "EventNode34": {
+        "name": "Earth"
+    },
+    "EventNode35": {
+        "name": "Earth"
+    },
+    "EventNode761": {
+        "name": "The Index"
+    },
+    "EventNode762": {
+        "name": "The Index pt 2"
+    },
+    "EventNode763": {
+        "name": "The Index Endurance"
+    },
+    "PvpNode0": {
+        "name": "Conclave Capture the Cephalon"
+    },
+    "PvpNode1": {
+        "name": "Conclave"
+    },
+    "PvpNode2": {
+        "name": "Conclave"
+    },
+    "PvpNode3": {
+        "name": "Conclave Capture the Cephalon"
+    },
+    "PvpNode4": {
+        "name": "Conclave"
+    },
+    "PvpNode5": {
+        "name": "Conclave"
+    },
+    "PvpNode6": {
+        "name": "Conclave"
+    },
+    "PvpNode7": {
+        "name": "Conclave"
+    },
+    "PvpNode8": {
+        "name": "Conclave"
+    },
+    "PvpNode9": {
+        "name": "Conclave Team Domination"
+    },
+    "PvpNode10": {
+        "name": "Conclave Domination"
+    },
+    "PvpNode11": {
+        "name": "Conclave Domitaion"
+    },
+    "PvpNode12": {
+        "name": "Conclave Domination"
+    },
+    "PvpNode13": {
+        "name": "Tactical Alert: Snoball Fight!"
+    },
+    "PvpNode14": {
+        "name": "Conclave: Quick Steel"
+    },
+    "ClanNode0": {
+        "name": "Romula",
+        "region": 2
+    },
+    "ClanNode1": {
+        "name": "Malva",
+        "region": 2
+    },
+    "ClanNode2": {
+        "name": "Coba",
+        "region": 3
+    },
+    "ClanNode3": {
+        "name": "Tikal",
+        "region": 3
+    },
+    "ClanNode4": {
+        "name": "Sinai",
+        "region": 5
+    },
+    "ClanNode5": {
+        "name": "Cameria",
+        "region": 5
+    },
+    "ClanNode6": {
+        "name": "Larzac",
+        "region": 13
+    },
+    "ClanNode7": {
+        "name": "Cholistan",
+        "region": 13
+    },
+    "ClanNode8": {
+        "name": "Kadesh",
+        "region": 4
+    },
+    "ClanNode9": {
+        "name": "Wahiba",
+        "region": 4
+    },
+    "ClanNode10": {
+        "name": "Memphis",
+        "region": 16
+    },
+    "ClanNode11": {
+        "name": "Zeugma",
+        "region": 16
+    },
+    "ClanNode12": {
+        "name": "Caracol",
+        "region": 6
+    },
+    "ClanNode13": {
+        "name": "Piscinas",
+        "region": 6
+    },
+    "ClanNode14": {
+        "name": "Amarna",
+        "region": 12
+    },
+    "ClanNode15": {
+        "name": "Sangeru",
+        "region": 12
+    },
+    "ClanNode16": {
+        "name": "Ur",
+        "region": 7
+    },
+    "ClanNode17": {
+        "name": "Assur",
+        "region": 7
+    },
+    "ClanNode18": {
+        "name": "Akkad",
+        "region": 11
+    },
+    "ClanNode19": {
+        "name": "Zabala",
+        "region": 11
+    },
+    "ClanNode20": {
+        "name": "Yursa",
+        "region": 8
+    },
+    "ClanNode21": {
+        "name": "Kelashin",
+        "region": 8
+    },
+    "ClanNode22": {
+        "name": "Seimeni",
+        "region": 10
+    },
+    "ClanNode23": {
+        "name": "Gabii",
+        "region": 10
+    },
+    "ClanNode24": {
+        "name": "Sechura",
+        "region": 9
+    },
+    "ClanNode25": {
+        "name": "Hieracon",
+        "region": 9
+    },
+    "\/Lotus\/Types\/Keys\/SortieBossKeyPhorid": {
+        "name": "Sortie Boss: Phorid"
+    },
+    "CrewBattleNode505": {
+        "name": "Ruse War Field"
+    },
+    "CrewBattleNode510": {
+        "name": "Gian Point"
+    },
+    "CrewBattleNode550": {
+        "name": "Nsu Grid"
+    },
+    "CrewBattleNode551": {
+        "name": "Ganalen's Grave"
+    },
+    "CrewBattleNode552": {
+        "name": "Rya"
+    },
+    "CrewBattleNode553": {
+        "name": "Flexa"
+    },
+    "CrewBattleNode554": {
+        "name": "H-2 Cloud"
+    },
+    "CrewBattleNode555": {
+        "name": "R-9 Cloud"
+    }
 }
