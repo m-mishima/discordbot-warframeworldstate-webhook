@@ -314,7 +314,7 @@ function parse_invasion( $invasion ) {
 }
 
 function parse_acolyte( $acolyte ) {
-    global $acolytelist, $solnodelist, $regionlist, $timezone;
+    global $acolytelist, $solnodelist, $regionlist, $missiontypelist, $timezone;
 
     date_default_timezone_set( $timezone );
 
@@ -343,6 +343,14 @@ function parse_acolyte( $acolyte ) {
         $region = $regionlist[ $region ];
     }
 
+    $mission = '';
+    if ( ( isset( $solnodelist[$lastdiscoveredlocation] ) ) && ( isset( $solnodelist[$lastdiscoveredlocation]['mission'] ) ) ) {
+        $mission = $solnodelist[$lastdiscoveredlocation]['mission'];
+    }
+    if ( isset( $missiontypelist[ $mission ] ) ) {
+        $mission = $missiontypelist[ $mission ];
+    }
+
     $lastdiscoveredtime = $acolyte['LastDiscoveredTime']['$date']['$numberLong'];
 
     $lastdiscoveredtime = date('Y-m-d H:i:s', $lastdiscoveredtime / 1000 );
@@ -364,8 +372,7 @@ function parse_acolyte( $acolyte ) {
         if ( $discovered === false ) {
             $retstr .= $titleline . ' is lost' . PHP_EOL;
         } else {
-            $retstr .= $titleline . PHP_EOL;
-
+            $retstr .= $titleline . sprintf( " (残%3.2f%%)", $healthpercent * 100 ) . PHP_EOL;
             $modstr = '';
             foreach( $mods as $k => $v ) {
                 if ( $modstr != '' ) $modstr .= ', ';
@@ -375,6 +382,9 @@ function parse_acolyte( $acolyte ) {
             $retstr .= $lastdiscoveredlocation;
             if ( $region != '' ) {
                 $retstr .= '(' . $region . ')';
+            }
+            if ( $mission != '' ) {
+                $retstr .= ' ' . $mission;
             }
             $retstr .= ' ' . $lastdiscoveredtime . '～' . PHP_EOL;
         }

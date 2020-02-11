@@ -14,10 +14,13 @@
     "MT_INTEL":          "潜入",
     "MT_LANDSCAPE":      "自由行動",
     "MT_MOBILE_DEFENSE": "機動防衛",
+    "MT_PURSUIT":        "追跡",
     "MT_PVP":            "コンクレーブ",
+    "MT_RACE":           "ラッシュ",
     "MT_RESCUE":         "救出",
     "MT_RETRIEVAL":      "ハイジャック",
     "MT_SABOTAGE":       "妨害",
+    "MT_SALVAGE":        "感染回収",
     "MT_SECTOR":         "ダークセクター",
     "MT_SURVIVAL":       "耐久",
     "MT_TERRITORY":      "傍受"

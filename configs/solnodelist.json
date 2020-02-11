@@ -1,15 +1,18 @@
 {
     "SettlementNode1": {
         "name": "Roche",
-        "region": 16
+        "region": 16,
+        "mission": "MT_EXTERMINATION"
     },
     "SettlementNode2": {
         "name": "Skyresh",
-        "region": 16
+        "region": 16,
+        "mission": "MT_CAPTURE"
     },
     "SettlementNode3": {
         "name": "Stickney",
-        "region": 16
+        "region": 16,
+        "mission": "MT_SURVIVAL"
     },
     "SettlementNode4": {
         "name": "Drunlo",
@@ -37,15 +40,18 @@
     },
     "SettlementNode10": {
         "name": "Kepler",
-        "region": 16
+        "region": 16,
+        "mission": "MT_RACE"
     },
     "SettlementNode11": {
         "name": "Gulliver",
-        "region": 16
+        "region": 16,
+        "mission": "MT_DEFENSE"
     },
     "SettlementNode12": {
         "name": "Monolith",
-        "region": 16
+        "region": 16,
+        "mission": "MT_RESCUE"
     },
     "SettlementNode13": {
         "name": "D'Arrest",
@@ -53,11 +59,13 @@
     },
     "SettlementNode14": {
         "name": "Shklovsky",
-        "region": 16
+        "region": 16,
+        "mission": "MT_INTEL"
     },
     "SettlementNode15": {
         "name": "Sharpless",
-        "region": 16
+        "region": 16,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SettlementNode16": {
         "name": "Wendell",
@@ -71,24 +79,27 @@
         "name": "Opik",
         "region": 16
     },
-    "SettlementNode12": {
+    "SettlementNode19": {
         "name": "Todd",
         "region": 16
     },
     "SettlementNode20": {
         "name": "Iliad",
-        "region": 16
+        "region": 16,
+        "mission": "MT_ASSASSINATION"
     },
     "SolNode0": {
         "name": "SolNode0"
     },
     "SolNode1": {
         "name": "Galatea",
-        "region": 8
+        "region": 8,
+        "mission": "MT_CAPTURE"
     },
     "SolNode2": {
         "name": "Aphrodite",
-        "region": 2
+        "region": 2,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode3": {
         "name": "Cordelia",
@@ -96,7 +107,8 @@
     },
     "SolNode4": {
         "name": "Acheron",
-        "region": 9
+        "region": 9,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode5": {
         "name": "Perdita",
@@ -104,7 +116,8 @@
     },
     "SolNode6": {
         "name": "Despina",
-        "region": 8
+        "region": 8,
+        "mission": "MT_EXCAVATE"
     },
     "SolNode7": {
         "name": "Epimetheus",
@@ -116,19 +129,23 @@
     },
     "SolNode9": {
         "name": "Rosalind",
-        "region": 7
+        "region": 7,
+        "mission": "MT_INTEL"
     },
     "SolNode10": {
         "name": "Thebe",
-        "region": 5
+        "region": 5,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode11": {
         "name": "Tharsis",
-        "region": 4
+        "region": 4,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode12": {
         "name": "Elion",
-        "region": 1
+        "region": 1,
+        "mission": "MT_CAPTURE"
     },
     "SolNode13": {
         "name": "Bianca",
@@ -136,63 +153,78 @@
     },
     "SolNode14": {
         "name": "Ultor",
-        "region": 4
+        "region": 4,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode15": {
         "name": "Pacific",
-        "region": 3
+        "region": 3,
+        "mission": "MT_RESCUE"
     },
     "SolNode16": {
         "name": "Augustus",
-        "region": 4
+        "region": 4,
+        "mission": "MT_EXCAVATE"
     },
     "SolNode17": {
         "name": "Proteus",
-        "region": 8
+        "region": 8,
+        "mission": "MT_DEFENSE"
     },
     "SolNode18": {
         "name": "Rhea",
-        "region": 6
+        "region": 6,
+        "mission": "MT_TERRITORY"
     },
     "SolNode19": {
         "name": "Enceladus",
-        "region": 6
+        "region": 6,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode20": {
         "name": "Telesto",
-        "region": 6
+        "region": 6,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode21": {
         "name": "Narcissus",
-        "region": 9
+        "region": 9,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode22": {
         "name": "Tessera",
-        "region": 2
+        "region": 2,
+        "mission": "MT_DEFENSE"
     },
     "SolNode23": {
         "name": "Cytherean",
-        "region": 2
+        "region": 2,
+        "mission": "MT_TERRITORY"
     },
     "SolNode24": {
         "name": "Oro",
-        "region": 3
+        "region": 3,
+        "mission": "MT_ASSASSINATION"
     },
     "SolNode25": {
         "name": "Callisto",
-        "region": 5
+        "region": 5,
+        "mission": "MT_TERRITORY"
     },
     "SolNode26": {
         "name": "Lith",
-        "region": 3
+        "region": 3,
+        "mission": "MT_DEFENSE"
     },
     "SolNode27": {
         "name": "E Prime",
-        "region": 3
+        "region": 3,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode28": {
         "name": "Terminus",
-        "region": 1
+        "region": 1,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode29": {
         "name": "Oberon",
@@ -200,23 +232,28 @@
     },
     "SolNode30": {
         "name": "Olympus",
-        "region": 4
+        "region": 4,
+        "mission": "MT_DISRUPTION"
     },
     "SolNode31": {
         "name": "Anthe",
-        "region": 6
+        "region": 6,
+        "mission": "MT_RESCUE"
     },
     "SolNode32": {
         "name": "Tethys",
-        "region": 6
+        "region": 6,
+        "mission": "MT_ASSASSINATION"
     },
     "SolNode33": {
         "name": "Ariel",
-        "region": 7
+        "region": 7,
+        "mission": "MT_CAPTURE"
     },
     "SolNode34": {
         "name": "Sycorax",
-        "region": 7
+        "region": 7,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode35": {
         "name": "Arcadia",
@@ -224,7 +261,8 @@
     },
     "SolNode36": {
         "name": "Martialis",
-        "region": 4
+        "region": 4,
+        "mission": "MT_RESCUE"
     },
     "SolNode37": {
         "name": "Pallene",
@@ -232,11 +270,13 @@
     },
     "SolNode38": {
         "name": "Minthe",
-        "region": 9
+        "region": 9,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode39": {
         "name": "Everest",
-        "region": 3
+        "region": 3,
+        "mission": "MT_EXCAVATE"
     },
     "SolNode40": {
         "name": "Prospero",
@@ -244,15 +284,18 @@
     },
     "SolNode41": {
         "name": "Arval",
-        "region": 4
+        "region": 4,
+        "mission": "MT_INTEL"
     },
     "SolNode42": {
         "name": "Helene",
-        "region": 6
+        "region": 6,
+        "mission": "MT_DEFENSE"
     },
     "SolNode43": {
         "name": "Cerberus",
-        "region": 9
+        "region": 9,
+        "mission": "MT_TERRITORY"
     },
     "SolNode44": {
         "name": "Mimas",
@@ -260,11 +303,13 @@
     },
     "SolNode45": {
         "name": "Ara",
-        "region": 4
+        "region": 4,
+        "mission": "MT_CAPTURE"
     },
     "SolNode46": {
         "name": "Spear",
-        "region": 4
+        "region": 4,
+        "mission": "MT_DEFENSE"
     },
     "SolNode47": {
         "name": "Janus",
@@ -272,19 +317,23 @@
     },
     "SolNode48": {
         "name": "Regna",
-        "region": 9
+        "region": 9,
+        "mission": "MT_RESCUE"
     },
     "SolNode49": {
         "name": "Larissa",
-        "region": 8
+        "region": 8,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode50": {
         "name": "Numa",
-        "region": 6
+        "region": 6,
+        "mission": "MT_RESCUE"
     },
     "SolNode51": {
         "name": "Hades",
-        "region": 9
+        "region": 9,
+        "mission": "MT_ASSASSINATION"
     },
     "SolNode52": {
         "name": "Portia",
@@ -292,7 +341,8 @@
     },
     "SolNode53": {
         "name": "Themisto",
-        "region": 5
+        "region": 5,
+        "mission": "MT_ASSASSINATION"
     },
     "SolNode54": {
         "name": "Silvanus",
@@ -304,87 +354,108 @@
     },
     "SolNode56": {
         "name": "Cypress",
-        "region": 9
+        "region": 9,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode57": {
         "name": "Sao",
-        "region": 8
+        "region": 8,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode58": {
         "name": "Hellas",
-        "region": 4
+        "region": 4,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode59": {
         "name": "Eurasia",
-        "region": 3
+        "region": 3,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode60": {
         "name": "Caliban",
-        "region": 7
+        "region": 7,
+        "mission": "MT_RESCUE"
     },
     "SolNode61": {
         "name": "Ishtar",
-        "region": 2
+        "region": 2,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode62": {
         "name": "Neso",
-        "region": 8
+        "region": 8,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode63": {
         "name": "Mantle",
-        "region": 3
+        "region": 3,
+        "mission": "MT_CAPTURE"
     },
     "SolNode64": {
         "name": "Umbriel",
-        "region": 7
+        "region": 7,
+        "mission": "MT_TERRITORY"
     },
     "SolNode65": {
         "name": "Gradivus",
-        "region": 4
+        "region": 4,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode66": {
         "name": "Unda",
-        "region": 2
+        "region": 2,
+        "mission": "MT_INTEL"
     },
     "SolNode67": {
         "name": "Dione",
-        "region": 6
+        "region": 6,
+        "mission": "MT_INTEL"
     },
     "SolNode68": {
         "name": "Vallis",
-        "region": 4
+        "region": 4,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode69": {
         "name": "Ophelia",
-        "region": 7
+        "region": 7,
+        "mission": "MT_SURVIVAL"
     },
     "SolNode70": {
         "name": "Cassini",
-        "region": 6
+        "region": 6,
+        "mission": "MT_CAPTURE"
     },
     "SolNode71": {
         "name": "Vesper",
-        "region": 2
+        "region": 2,
+        "mission": "MT_INTEL"
     },
     "SolNode72": {
         "name": "Outer Terminus",
-        "region": 9
+        "region": 9,
+        "mission": "MT_DEFENSE"
     },
     "SolNode73": {
         "name": "Ananke",
-        "region": 5
+        "region": 5,
+        "mission": "MT_CAPTURE"
     },
     "SolNode74": {
         "name": "Carme",
-        "region": 5
+        "region": 5,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode75": {
         "name": "Cervantes",
-        "region": 3
+        "region": 3,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode76": {
         "name": "Hydra",
-        "region": 9
+        "region": 9,
+        "mission": "MT_CAPTURE"
     },
     "SolNode77": {
         "name": "Cupid",
@@ -392,11 +463,13 @@
     },
     "SolNode78": {
         "name": "Triton",
-        "region": 8
+        "region": 8,
+        "mission": "MT_RESCUE"
     },
     "SolNode79": {
         "name": "Cambria",
-        "region": 3
+        "region": 3,
+        "mission": "MT_INTEL"
     },
     "SolNode80": {
         "name": "Phoebe",
@@ -404,23 +477,28 @@
     },
     "SolNode81": {
         "name": "Palus",
-        "region": 9
+        "region": 9,
+        "mission": "MT_SURVIVAL"
     },
     "SolNode82": {
         "name": "Calypso",
-        "region": 6
+        "region": 6,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode83": {
         "name": "Cressida",
-        "region": 7
+        "region": 7,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode84": {
         "name": "Nereid",
-        "region": 8
+        "region": 8,
+        "mission": "MT_INTEL"
     },
     "SolNode85": {
         "name": "Gaia",
-        "region": 3
+        "region": 3,
+        "mission": "MT_TERRITORY"
     },
     "SolNode86": {
         "name": "Aegaeon",
@@ -428,15 +506,18 @@
     },
     "SolNode87": {
         "name": "Ganymede",
-        "region": 5
+        "region": 5,
+        "mission": "MT_DISRUPTION"
     },
     "SolNode88": {
         "name": "Adrastea",
-        "region": 5
+        "region": 5,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode89": {
         "name": "Mariana",
-        "region": 3
+        "region": 3,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode90": {
         "name": "Miranda"
@@ -451,11 +532,13 @@
     },
     "SolNode93": {
         "name": "Keeler",
-        "region": 6
+        "region": 6,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode94": {
         "name": "Apollodorus",
-        "region": 1
+        "region": 1,
+        "mission": "MT_SURVIVAL"
     },
     "SolNode95": {
         "name": "Thalassa",
@@ -463,59 +546,73 @@
     },
     "SolNode96": {
         "name": "Titan",
-        "region": 6
+        "region": 6,
+        "mission": "MT_SURVIVAL"
     },
     "SolNode97": {
         "name": "Amalthea",
-        "region": 5
+        "region": 5,
+        "mission": "MT_INTEL"
     },
     "SolNode98": {
         "name": "Desdemona",
-        "region": 7
+        "region": 7,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode99": {
         "name": "War",
-        "region": 4
+        "region": 4,
+        "mission": "MT_ASSASSINATION"
     },
     "SolNode100": {
         "name": "Elara",
-        "region": 5
+        "region": 5,
+        "mission": "MT_SURVIVAL"
     },
     "SolNode101": {
         "name": "Kiliken",
-        "region": 2
+        "region": 2,
+        "mission": "MT_EXCAVATE"
     },
     "SolNode102": {
         "name": "Oceanum",
-        "region": 9
+        "region": 9,
+        "mission": "MT_INTEL"
     },
     "SolNode103": {
         "name": "M Prime",
-        "region": 1
+        "region": 1,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode104": {
         "name": "Fossa",
-        "region": 2
+        "region": 2,
+        "mission": "MT_ASSASSINATION"
     },
     "SolNode105": {
         "name": "Titania",
-        "region": 7
+        "region": 7,
+        "mission": "MT_ASSASSINATION"
     },
     "SolNode106": {
         "name": "Alator",
-        "region": 4
+        "region": 4,
+        "mission": "MT_TERRITORY"
     },
     "SolNode107": {
         "name": "Venera",
-        "region": 2
+        "region": 2,
+        "mission": "MT_CAPTURE"
     },
     "SolNode108": {
         "name": "Tolstoj",
-        "region": 1
+        "region": 1,
+        "mission": "MT_ASSASSINATION"
     },
     "SolNode109": {
         "name": "Linea",
-        "region": 2
+        "region": 2,
+        "mission": "MT_RESCUE"
     },
     "SolNode110": {
         "name": "Hyperion",
@@ -531,11 +628,13 @@
     },
     "SolNode113": {
         "name": "Ares",
-        "region": 4
+        "region": 4,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode114": {
         "name": "Puck",
-        "region": 7
+        "region": 7,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode115": {
         "name": "Quirinus",
@@ -551,11 +650,13 @@
     },
     "SolNode118": {
         "name": "Laomedeia",
-        "region": 8
+        "region": 8,
+        "mission": "MT_DISRUPTION"
     },
     "SolNode119": {
         "name": "Caloris",
-        "region": 1
+        "region": 1,
+        "mission": "MT_RESCUE"
     },
     "SolNode120": {
         "name": "Halimede",
@@ -563,15 +664,18 @@
     },
     "SolNode121": {
         "name": "Carpo",
-        "region": 5
+        "region": 5,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode122": {
         "name": "Stephano",
-        "region": 7
+        "region": 7,
+        "mission": "MT_DEFENSE"
     },
     "SolNode123": {
         "name": "V Prime",
-        "region": 2
+        "region": 2,
+        "mission": "MT_SURVIVAL"
     },
     "SolNode124": {
         "name": "Trinculo",
@@ -579,35 +683,43 @@
     },
     "SolNode125": {
         "name": "Io",
-        "region": 5
+        "region": 5,
+        "mission": "MT_DEFENSE"
     },
     "SolNode126": {
         "name": "Metis",
-        "region": 5
+        "region": 5,
+        "mission": "MT_RESCUE"
     },
     "SolNode127": {
         "name": "Psamathe",
-        "region": 8
+        "region": 8,
+        "mission": "MT_ASSASSINATION"
     },
     "SolNode128": {
         "name": "E Gate",
-        "region": 2
+        "region": 2,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode129": {
         "name": "オーブ峡谷",
-        "region": 2
+        "region": 2,
+        "mission": "MT_LANDSCAPE"
     },
     "SolNode130": {
         "name": "Lares",
-        "region": 1
+        "region": 1,
+        "mission": "MT_DEFENSE"
     },
     "SolNode131": {
         "name": "Pallas",
-        "region": 10
+        "region": 10,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode132": {
         "name": "Bode",
-        "region": 10
+        "region": 10,
+        "mission": "MT_INTEL"
     },
     "SolNode133": {
         "name": "Vedic",
@@ -619,7 +731,8 @@
     },
     "SolNode135": {
         "name": "Thon",
-        "region": 10
+        "region": 10,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode136": {
         "name": "Olla",
@@ -627,23 +740,28 @@
     },
     "SolNode137": {
         "name": "Nuovo",
-        "region": 10
+        "region": 10,
+        "mission": "MT_RESCUE"
     },
     "SolNode138": {
         "name": "Ludi",
-        "region": 10
+        "region": 10,
+        "mission": "MT_RETRIEVAL"
     },
     "SolNode139": {
         "name": "Lex",
-        "region": 10
+        "region": 10,
+        "mission": "MT_CAPTURE"
     },
     "SolNode140": {
         "name": "Kiste",
-        "region": 10
+        "region": 10,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode141": {
         "name": "Ker",
-        "region": 10
+        "region": 10,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode142": {
         "name": "Hapke",
@@ -655,7 +773,8 @@
     },
     "SolNode144": {
         "name": "Exta",
-        "region": 10
+        "region": 10,
+        "mission": "MT_ASSASSINATION"
     },
     "SolNode145": {
         "name": "Egeria",
@@ -663,11 +782,13 @@
     },
     "SolNode146": {
         "name": "Draco",
-        "region": 10
+        "region": 10,
+        "mission": "MT_SURVIVAL"
     },
     "SolNode147": {
         "name": "Cinxia",
-        "region": 10
+        "region": 10,
+        "mission": "MT_TERRITORY"
     },
     "SolNode148": {
         "name": "Cerium",
@@ -675,7 +796,8 @@
     },
     "SolNode149": {
         "name": "Casta",
-        "region": 10
+        "region": 10,
+        "mission": "MT_DEFENSE"
     },
     "SolNode150": {
         "name": "Albedo",
@@ -691,7 +813,8 @@
     },
     "SolNode153": {
         "name": "Brugia",
-        "region": 11
+        "region": 11,
+        "mission": "MT_RESCUE"
     },
     "SolNode154": {
         "name": "Candiru",
@@ -727,7 +850,8 @@
     },
     "SolNode162": {
         "name": "Isos",
-        "region": 11
+        "region": 11,
+        "mission": "MT_CAPTURE"
     },
     "SolNode163": {
         "name": "Ixodes",
@@ -735,7 +859,8 @@
     },
     "SolNode164": {
         "name": "Kala-azar",
-        "region": 11
+        "region": 11,
+        "mission": "MT_DEFENSE"
     },
     "SolNode165": {
         "name": "Sporid",
@@ -743,11 +868,13 @@
     },
     "SolNode166": {
         "name": "Nimus",
-        "region": 11
+        "region": 11,
+        "mission": "MT_SURVIVAL"
     },
     "SolNode167": {
         "name": "Oestrus",
-        "region": 11
+        "region": 11,
+        "mission": "MT_SALVAGE"
     },
     "SolNode168": {
         "name": "Phalan",
@@ -763,15 +890,18 @@
     },
     "SolNode171": {
         "name": "Saxis",
-        "region": 11
+        "region": 11,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode172": {
         "name": "Xini",
-        "region": 11
+        "region": 11,
+        "mission": "MT_TERRITORY"
     },
     "SolNode173": {
         "name": "Solium",
-        "region": 11
+        "region": 11,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode174": {
         "name": "Sparga",
@@ -779,7 +909,8 @@
     },
     "SolNode175": {
         "name": "Naeglar",
-        "region": 11
+        "region": 11,
+        "mission": "MT_HIVE"
     },
     "SolNode176": {
         "name": "Viver",
@@ -787,7 +918,8 @@
     },
     "SolNode177": {
         "name": "Kappa",
-        "region": 12
+        "region": 12,
+        "mission": "MT_INTEL"
     },
     "SolNode178": {
         "name": "Hyosube",
@@ -803,7 +935,8 @@
     },
     "SolNode181": {
         "name": "Adaro",
-        "region": 12
+        "region": 12,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode182": {
         "name": "Camenae",
@@ -811,47 +944,58 @@
     },
     "SolNode183": {
         "name": "Vodyanoi",
-        "region": 12
+        "region": 12,
+        "mission": "MT_ARENA"
     },
     "SolNode184": {
         "name": "Rusalka",
-        "region": 12
+        "region": 12,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode185": {
         "name": "Berehynia",
-        "region": 12
+        "region": 12,
+        "mission": "MT_TERRITORY"
     },
     "SolNode186": {
         "name": "Phithale",
-        "region": 12
+        "region": 12,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode187": {
         "name": "Selkie",
-        "region": 12
+        "region": 12,
+        "mission": "MT_SURVIVAL"
     },
     "SolNode188": {
         "name": "Kelpie",
-        "region": 12
+        "region": 12,
+        "mission": "MT_DISRUPTION"
     },
     "SolNode189": {
         "name": "Naga",
-        "region": 12
+        "region": 12,
+        "mission": "MT_RESCUE"
     },
     "SolNode190": {
         "name": "Nakki",
-        "region": 12
+        "region": 12,
+        "mission": "MT_ARENA"
     },
     "SolNode191": {
         "name": "Marid",
-        "region": 12
+        "region": 12,
+        "mission": "MT_RETRIEVAL"
     },
     "SolNode192": {
         "name": "Tikoloshe",
-        "region": 12
+        "region": 12,
+        "mission": "MT_INTEL"
     },
     "SolNode193": {
         "name": "Merrow",
-        "region": 12
+        "region": 12,
+        "mission": "MT_ASSASSINATION"
     },
     "SolNode194": {
         "name": "Ponaturi",
@@ -859,11 +1003,13 @@
     },
     "SolNode195": {
         "name": "Hydron",
-        "region": 12
+        "region": 12,
+        "mission": "MT_DEFENSE"
     },
     "SolNode196": {
         "name": "Charybdis",
-        "region": 12
+        "region": 12,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode197": {
         "name": "Graeae",
@@ -875,7 +1021,8 @@
     },
     "SolNode199": {
         "name": "Yam",
-        "region": 12
+        "region": 12,
+        "mission": "MT_ARENA"
     },
     "SolNode200": {
         "name": "Veles",
@@ -891,15 +1038,18 @@
     },
     "SolNode203": {
         "name": "Abaddon",
-        "region": 13
+        "region": 13,
+        "mission": "MT_CAPTURE"
     },
     "SolNode204": {
         "name": "Armaros",
-        "region": 13
+        "region": 13,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode205": {
         "name": "Baal",
-        "region": 13
+        "region": 13,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode206": {
         "name": "Eligor",
@@ -915,19 +1065,23 @@
     },
     "SolNode209": {
         "name": "Morax",
-        "region": 13
+        "region": 13,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode210": {
         "name": "Naamah",
-        "region": 13
+        "region": 13,
+        "mission": "MT_ASSASSINATION"
     },
     "SolNode211": {
         "name": "Ose",
-        "region": 13
+        "region": 13,
+        "mission": "MT_TERRITORY"
     },
     "SolNode212": {
         "name": "Paimon",
-        "region": 13
+        "region": 13,
+        "mission": "MT_DEFENSE"
     },
     "SolNode213": {
         "name": "Shax",
@@ -935,19 +1089,23 @@
     },
     "SolNode214": {
         "name": "Sorath",
-        "region": 13
+        "region": 13,
+        "mission": "MT_RETRIEVAL"
     },
     "SolNode215": {
         "name": "Valac",
-        "region": 13
+        "region": 13,
+        "mission": "MT_INTEL"
     },
     "SolNode216": {
         "name": "Valefor",
-        "region": 13
+        "region": 13,
+        "mission": "MT_EXCAVATE"
     },
     "SolNode217": {
         "name": "Orias",
-        "region": 13
+        "region": 13,
+        "mission": "MT_RESCUE"
     },
     "SolNode218": {
         "name": "Zagan",
@@ -959,7 +1117,8 @@
     },
     "SolNode220": {
         "name": "Kokabiel",
-        "region": 13
+        "region": 13,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode221": {
         "name": "Neruda",
@@ -971,19 +1130,23 @@
     },
     "SolNode223": {
         "name": "Boethius",
-        "region": 1
+        "region": 1,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode224": {
         "name": "Odin",
-        "region": 1
+        "region": 1,
+        "mission": "MT_TERRITORY"
     },
     "SolNode225": {
         "name": "Suisei",
-        "region": 1
+        "region": 1,
+        "mission": "MT_INTEL"
     },
     "SolNode226": {
         "name": "Pantheon",
-        "region": 1
+        "region": 1,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode227": {
         "name": "Verdi",
@@ -991,91 +1154,113 @@
     },
     "SolNode228": {
         "name": "エイドロンの草原",
-        "region": 3
+        "region": 3,
+        "mission": "MT_LANDSCAPE"
     },
     "SolNode300": {
         "name": "Plato",
-        "region": 18
+        "region": 18,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode301": {
         "name": "Grimaldi",
-        "region": 18
+        "region": 18,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode302": {
         "name": "Tycho",
-        "region": 18
+        "region": 18,
+        "mission": "MT_SURVIVAL"
     },
     "SolNode304": {
         "name": "Copernicus",
-        "region": 18
+        "region": 18,
+        "mission": "MT_CAPTURE"
     },
     "SolNode305": {
         "name": "Stöfler",
-        "region": 18
+        "region": 18,
+        "mission": "MT_DEFENSE"
     },
     "SolNode306": {
         "name": "Pavlov",
-        "region": 18
+        "region": 18,
+        "mission": "MT_INTEL"
     },
     "SolNode307": {
         "name": "Zeipel",
-        "region": 18
+        "region": 18,
+        "mission": "MT_RESCUE"
     },
     "SolNode308": {
         "name": "Apollo",
-        "region": 18
+        "region": 18,
+        "mission": "MT_DISRUPTION"
     },
     "SolNode400": {
         "name": "Teshub",
-        "region": 15
+        "region": 15,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode401": {
         "name": "Hepit",
-        "region": 15
+        "region": 15,
+        "mission": "MT_CAPTURE"
     },
     "SolNode402": {
         "name": "Taranis",
-        "region": 15
+        "region": 15,
+        "mission": "MT_DEFENSE"
     },
     "SolNode403": {
         "name": "Tiwaz",
-        "region": 15
+        "region": 15,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode404": {
         "name": "Stribog",
-        "region": 15
+        "region": 15,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode405": {
         "name": "Ani",
-        "region": 15
+        "region": 15,
+        "mission": "MT_SURVIVAL"
     },
     "SolNode406": {
         "name": "Ukko",
-        "region": 15
+        "region": 15,
+        "mission": "MT_CAPTURE"
     },
     "SolNode407": {
         "name": "Oxomoco",
-        "region": 15
+        "region": 15,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode408": {
         "name": "Belenus",
-        "region": 15
+        "region": 15,
+        "mission": "MT_DEFENSE"
     },
     "SolNode409": {
         "name": "Mot",
-        "region": 15
+        "region": 15,
+        "mission": "MT_SURVIVAL"
     },
     "SolNode410": {
         "name": "Aten",
-        "region": 15
+        "region": 15,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode411": {
         "name": "Marduk",
-        "region": 15
+        "region": 15,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode412": {
         "name": "Mithra",
-        "region": 15
+        "region": 15,
+        "mission": "MT_TERRITORY"
     },
     "SolNode413": {
         "name": "SolNode413",
@@ -1083,102 +1268,126 @@
     },
     "SolNode706": {
         "name": "オロキン遺跡船 確保",
-        "region": 17
+        "region": 17,
+        "mission": "MT_CAPTURE"
     },
     "SolNode707": {
         "name": "オロキン遺跡船 防衛",
-        "region": 17
+        "region": 17,
+        "mission": "MT_DEFENSE"
     },
     "SolNode708": {
         "name": "オロキン遺跡船 掃滅",
-        "region": 17
+        "region": 17,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode709": {
         "name": "オロキン遺跡船 機動防衛",
-        "region": 17
+        "region": 17,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode710": {
         "name": "オロキン遺跡船 妨害",
-        "region": 17
+        "region": 17,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode711": {
         "name": "オロキン遺跡船 耐久",
-        "region": 17
+        "region": 17,
+        "mission": "MT_SURVIVAL"
     },
     "SolNode712": {
         "name": "オロキン遺跡船 抹殺",
-        "region": 17
+        "region": 17,
+        "mission": "MT_ASSASSINATION"
     },
     "SolNode713": {
         "name": "遺跡船 使者抹殺",
-        "region": 17
+        "region": 17,
+        "mission": "MT_ASSASSINATION"
     },
     "SolNode740": {
         "name": "ロパロリスト",
-        "region": 5
+        "region": 5,
+        "mission": "MT_ASSASSINATION"
     },
     "SolNode741": {
         "name": "Koro",
-        "region": 19
+        "region": 19,
+        "mission": "MT_ASSAULT"
     },
     "SolNode742": {
         "name": "Nabuk",
-        "region": 19
+        "region": 19,
+        "mission": "MT_DEFENSE"
     },
     "SolNode743": {
         "name": "Rotuma",
-        "region": 19
+        "region": 19,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode744": {
         "name": "Taveuni",
-        "region": 19
+        "region": 19,
+        "mission": "MT_SURVIVAL"
     },
     "SolNode745": {
         "name": "Tamu",
-        "region": 19
+        "region": 19,
+        "mission": "MT_DISRUPTION"
     },
     "SolNode746": {
         "name": "Dakata",
-        "region": 19
+        "region": 19,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode747": {
         "name": "Pago",
-        "region": 19
+        "region": 19,
+        "mission": "MT_INTEL"
     },
     "SolNode748": {
         "name": "Garus",
-        "region": 19
+        "region": 19,
+        "mission": "MT_RESCUE"
     },
     "SolNode901": {
         "name": "Caduceus"
     },
     "SolNode902": {
         "name": "Montes",
-        "region": 2
+        "region": 2,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode903": {
         "name": "Erpo",
-        "region": 3
+        "region": 3,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "SolNode904": {
         "name": "Syrtis",
-        "region": 4
+        "region": 4,
+        "mission": "MT_EXTERMINATION"
     },
     "SolNode905": {
         "name": "Galilea",
-        "region": 5
+        "region": 5,
+        "mission": "MT_SABOTAGE"
     },
     "SolNode906": {
         "name": "Pandora",
-        "region": 6
+        "region": 6,
+        "mission": "MT_PURSUIT"
     },
     "SolNode907": {
         "name": "Caelus",
-        "region": 7
+        "region": 7,
+        "mission": "MT_TERRITORY"
     },
     "SolNode908": {
         "name": "Salacia",
-        "region": 8
+        "region": 8,
+        "mission": "MT_MOBILE_DEFENSE"
     },
     "MercuryHUB": {
         "name": "Larunda Relay",
@@ -1221,7 +1430,8 @@
         "name": "Elatha"
     },
     "EventNode4": {
-        "name": "Proxy Rebellion"
+        "name": "Proxy Rebellion",
+        "mission": "MT_SURVIVAL"
     },
     "EventNode5": {
         "name": "Birog"
@@ -1230,7 +1440,8 @@
         "name": "Tyl Reygor Seal Lab"
     },
     "EventNode7": {
-        "name": "Proxy Rebellion"
+        "name": "Proxy Rebellion",
+        "mission": "MT_TERRITORY"
     },
     "EventNode8": {
         "name": "Corb"
@@ -1260,13 +1471,16 @@
         "name": "Operation Cryotic Front"
     },
     "EventNode17": {
-        "name": "Proxy Rebellion"
+        "name": "Proxy Rebellion",
+        "mission": "MT_DEFENSE"
     },
     "EventNode18": {
-        "name": "Proxy Rebellion"
+        "name": "Proxy Rebellion",
+        "mission": "MT_DEFENSE"
     },
     "EventNode19": {
-        "name": "Mars"
+        "name": "Mars",
+        "mission": "MT_DEFENSE"
     },
     "EventNode20": {
         "name": "Tyl Regor Sea Lab"
@@ -1275,198 +1489,254 @@
         "name": "Tyl Regor Sea Lab"
     },
     "EventNode24": {
-        "name": "Earth"
+        "name": "Earth",
+        "mission": "MT_ARENA"
     },
     "EventNode25": {
-        "name": "Earth"
+        "name": "Earth",
+        "mission": "MT_ARENA"
     },
     "EventNode26": {
-        "name": "Earth"
+        "name": "Earth",
+        "mission": "MT_EXTERMINATION"
     },
     "EventNode27": {
-        "name": "Void"
+        "name": "Void",
+        "mission": "MT_SURVIVAL"
     },
     "EventNode28": {
-        "name": "Saturn"
+        "name": "Saturn",
+        "mission": "MT_ASSASSINATION"
     },
     "EventNode29": {
-        "name": "Saturn"
+        "name": "Saturn",
+        "mission": "MT_ASSASSINATION"
     },
     "EventNode30": {
-        "name": "Ganymede"
+        "name": "Ganymede",
+        "mission": "MT_DISRUPTION"
     },
     "EventNode31": {
-        "name": "Ganymede"
+        "name": "Ganymede",
+        "mission": "MT_DISRUPTION"
     },
     "EventNode32": {
-        "name": "Ganymede"
+        "name": "Ganymede",
+        "mission": "MT_DISRUPTION"
     },
     "EventNode33": {
-        "name": "Ganymede"
+        "name": "Ganymede",
+        "mission": "MT_DISRUPTION"
     },
     "EventNode34": {
-        "name": "Earth"
+        "name": "Earth",
+        "mission": "MT_ARENA"
     },
     "EventNode35": {
-        "name": "Earth"
+        "name": "Earth",
+        "mission": "MT_ARENA"
     },
     "EventNode761": {
-        "name": "The Index"
+        "name": "The Index",
+        "mission": "MT_ARENA"
     },
     "EventNode762": {
-        "name": "The Index pt 2"
+        "name": "The Index pt 2",
+        "mission": "MT_ARENA"
     },
     "EventNode763": {
-        "name": "The Index Endurance"
+        "name": "The Index Endurance",
+        "mission": "MT_ARENA"
     },
     "PvpNode0": {
-        "name": "Conclave Capture the Cephalon"
+        "name": "Conclave Capture the Cephalon",
+        "mission": "MT_PVP"
     },
     "PvpNode1": {
-        "name": "Conclave"
+        "name": "Conclave",
+        "mission": "MT_PVP"
     },
     "PvpNode2": {
-        "name": "Conclave"
+        "name": "Conclave",
+        "mission": "MT_PVP"
     },
     "PvpNode3": {
-        "name": "Conclave Capture the Cephalon"
+        "name": "Conclave Capture the Cephalon",
+        "mission": "MT_PVP"
     },
     "PvpNode4": {
-        "name": "Conclave"
+        "name": "Conclave",
+        "mission": "MT_PVP"
     },
     "PvpNode5": {
-        "name": "Conclave"
+        "name": "Conclave",
+        "mission": "MT_PVP"
     },
     "PvpNode6": {
-        "name": "Conclave"
+        "name": "Conclave",
+        "mission": "MT_PVP"
     },
     "PvpNode7": {
-        "name": "Conclave"
+        "name": "Conclave",
+        "mission": "MT_PVP"
     },
     "PvpNode8": {
-        "name": "Conclave"
+        "name": "Conclave",
+        "mission": "MT_PVP"
     },
     "PvpNode9": {
-        "name": "Conclave Team Domination"
+        "name": "Conclave Team Domination",
+        "mission": "MT_PVP"
     },
     "PvpNode10": {
-        "name": "Conclave Domination"
+        "name": "Conclave Domination",
+        "mission": "MT_PVP"
     },
     "PvpNode11": {
-        "name": "Conclave Domitaion"
+        "name": "Conclave Domitaion",
+        "mission": "MT_PVP"
     },
     "PvpNode12": {
-        "name": "Conclave Domination"
+        "name": "Conclave Domination",
+        "mission": "MT_PVP"
     },
     "PvpNode13": {
-        "name": "Tactical Alert: Snoball Fight!"
+        "name": "Tactical Alert: Snoball Fight!",
+        "mission": "MT_PVP"
     },
     "PvpNode14": {
-        "name": "Conclave: Quick Steel"
+        "name": "Conclave: Quick Steel",
+        "mission": "MT_PVP"
     },
     "ClanNode0": {
         "name": "Romula",
-        "region": 2
+        "region": 2,
+        "mission": "MT_DEFENSE"
     },
     "ClanNode1": {
         "name": "Malva",
-        "region": 2
+        "region": 2,
+        "mission": "MT_SURVIVAL"
     },
     "ClanNode2": {
         "name": "Coba",
-        "region": 3
+        "region": 3,
+        "mission": "MT_DEFENSE"
     },
     "ClanNode3": {
         "name": "Tikal",
-        "region": 3
+        "region": 3,
+        "mission": "MT_EXCAVATE"
     },
     "ClanNode4": {
         "name": "Sinai",
-        "region": 5
+        "region": 5,
+        "mission": "MT_DEFENSE"
     },
     "ClanNode5": {
         "name": "Cameria",
-        "region": 5
+        "region": 5,
+        "mission": "MT_SURVIVAL"
     },
     "ClanNode6": {
         "name": "Larzac",
-        "region": 13
+        "region": 13,
+        "mission": "MT_DEFENSE"
     },
     "ClanNode7": {
         "name": "Cholistan",
-        "region": 13
+        "region": 13,
+        "mission": "MT_EXCAVATE"
     },
     "ClanNode8": {
         "name": "Kadesh",
-        "region": 4
+        "region": 4,
+        "mission": "MT_DEFENSE"
     },
     "ClanNode9": {
         "name": "Wahiba",
-        "region": 4
+        "region": 4,
+        "mission": "MT_SURVIVAL"
     },
     "ClanNode10": {
         "name": "Memphis",
-        "region": 16
+        "region": 16,
+        "mission": "MT_EVACUATION"
     },
     "ClanNode11": {
         "name": "Zeugma",
-        "region": 16
+        "region": 16,
+        "mission": "MT_SURVIVAL"
     },
     "ClanNode12": {
         "name": "Caracol",
-        "region": 6
+        "region": 6,
+        "mission": "MT_EVACUATION"
     },
     "ClanNode13": {
         "name": "Piscinas",
-        "region": 6
+        "region": 6,
+        "mission": "MT_SURVIVAL"
     },
     "ClanNode14": {
         "name": "Amarna",
-        "region": 12
+        "region": 12,
+        "mission": "MT_SURVIVAL"
     },
     "ClanNode15": {
         "name": "Sangeru",
-        "region": 12
+        "region": 12,
+        "mission": "MT_DEFENSE"
     },
     "ClanNode16": {
         "name": "Ur",
-        "region": 7
+        "region": 7,
+        "mission": "MT_DISRUPTION"
     },
     "ClanNode17": {
         "name": "Assur",
-        "region": 7
+        "region": 7,
+        "mission": "MT_SURVIVAL"
     },
     "ClanNode18": {
         "name": "Akkad",
-        "region": 11
+        "region": 11,
+        "mission": "MT_DEFENSE"
     },
     "ClanNode19": {
         "name": "Zabala",
-        "region": 11
+        "region": 11,
+        "mission": "MT_SURVIVAL"
     },
     "ClanNode20": {
         "name": "Yursa",
-        "region": 8
+        "region": 8,
+        "mission": "MT_EVACUATION"
     },
     "ClanNode21": {
         "name": "Kelashin",
-        "region": 8
+        "region": 8,
+        "mission": "MT_SURVIVAL"
     },
     "ClanNode22": {
         "name": "Seimeni",
-        "region": 10
+        "region": 10,
+        "mission": "MT_DEFENSE"
     },
     "ClanNode23": {
         "name": "Gabii",
-        "region": 10
+        "region": 10,
+        "mission": "MT_SURVIVAL"
     },
     "ClanNode24": {
         "name": "Sechura",
-        "region": 9
+        "region": 9,
+        "mission": "MT_DEFENSE"
     },
     "ClanNode25": {
         "name": "Hieracon",
-        "region": 9
+        "region": 9,
+        "mission": "MT_EXCAVATE"
     },
     "\/Lotus\/Types\/Keys\/SortieBossKeyPhorid": {
         "name": "Sortie Boss: Phorid"
