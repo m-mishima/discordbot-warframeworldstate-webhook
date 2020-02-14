@@ -1,5 +1,6 @@
 // alert の武器制限情報
 {
     "\/Lotus\/Weapons\/Tenno\/Melee\/PlayerMeleeWeapon": "melee only",
+    "\/Lotus\/Weapons\/Tenno\/Pistol\/LotusPistol": "pistol only",
     "\/Lotus\/Weapons\/Tenno\/Shotgun\/LotusShotgun" : "shotgun only"
 }
