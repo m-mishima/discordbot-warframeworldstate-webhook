@@ -214,7 +214,7 @@ function parse_baro( $baro ) {
             $ducats  = $v2['PrimePrice'];
             $credits = $v2['RegularPrice'];
 
-            $retstr .= sprintf( "%dducats %dcredits %s\n", $ducats, $credits, $name );
+            $retstr .= sprintf( "%sducats %scredits %s\n", number_format( $ducats ), number_format( $credits ), $name );
 
         }
     }
@@ -372,7 +372,7 @@ function parse_acolyte( $acolyte ) {
         if ( $discovered === false ) {
             $retstr .= $titleline . ' is lost' . PHP_EOL;
         } else {
-            $retstr .= $titleline . sprintf( " (残%3.2f%%)", $healthpercent * 100 ) . PHP_EOL;
+            $retstr .= $titleline . sprintf( " (残%s%%)", number_format( $healthpercent * 100, 2 ) ) . PHP_EOL;
             $modstr = '';
             foreach( $mods as $k => $v ) {
                 if ( $modstr != '' ) $modstr .= ', ';
@@ -452,7 +452,7 @@ function parse_reward( $rewardinfo ) {
     foreach( $rewardinfo as $k => $v ) {
         switch( $k ) {
         case 'credits':
-            $rewardlist[] = sprintf( "%d Credit", $v );
+            $rewardlist[] = sprintf( "%s Credit", number_format( $v ) );
             break;
         case 'items':
             foreach( $v as $v1 ) {
