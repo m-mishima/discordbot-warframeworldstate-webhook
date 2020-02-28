@@ -414,6 +414,11 @@ function create_acolytehash( $acolyte ) {
 function parse_fomorian( $goals ) {
     global $solnodelist, $regionlist, $itemtranslatelist, $timezone;
 
+    if ( $goals['Desc'] == '/Lotus/Language/G1Quests/HeatFissuresEventName' ) {
+        // サーミアは常設みたいなものなので無視 tenno.toolsもそうしてる
+        return '';
+    }
+
     date_default_timezone_set( $timezone );
 
     $retstr = '';
@@ -488,7 +493,6 @@ function parse_fomorian( $goals ) {
         break;
     case '/Lotus/Language/G1Quests/HeatFissuresEventName':
         $target = 'サーミアの裂け目';
-        return '';	// サーミアは常設みたいなものなので無視 tenno.toolsもそうしてる
         break;
     default:
         break;
