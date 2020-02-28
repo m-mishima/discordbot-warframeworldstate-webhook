@@ -1450,13 +1450,15 @@
         "name": "Operation Gate Crash Pt. 2"
     },
     "EventNode10": {
-        "name": "Lugh"
+        "name": "Lugh",
+        "region": 11
     },
     "EventNode11": {
         "name": "Nemed"
     },
     "EventNode12": {
-        "name": "Operation Cryotic Front"
+        "name": "Operation Cryotic Front",
+        "region": 13
     },
     "EventNode13": {
         "name": "Shifting Sands"

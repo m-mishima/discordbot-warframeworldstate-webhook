@@ -411,6 +411,135 @@ function create_acolytehash( $acolyte ) {
     return hash( 'sha256', json_encode( $arr ) );
 }
 
+function parse_fomorian( $goals ) {
+    global $solnodelist, $regionlist, $itemtranslatelist, $timezone;
+
+    date_default_timezone_set( $timezone );
+
+    $retstr = '';
+
+    $oid           = $goals['_id']['$oid'];
+    $fomorian      = $goals['Fomorian']; // true
+    $activation    = $goals['Activation']['$date']['$numberLong'];
+    $expiry        = $goals['Expiry']['$date']['$numberLong'];
+    $countnum      = $goals['Count']; // 0
+    $goal          = $goals['Goal']; // 3
+    $healthpct     = $goals['HealthPct']; // 0.9334036
+    $victimnode    = $goals['VictimNode']; // ErisHUB
+    $personal      = $goals['Personal']; // true
+    $best          = $goals['Best']; // false
+    $scorevar      = $goals['ScoreVar']; // ""
+    $scoremaxtag   = $goals['ScoreMaxTag']; // ""
+    $scoretagblock = $goals['ScoreTagBlocksGuildTierChanges']; // false
+    $success       = $goals['ScoreMaxTag']; // 0
+    $node          = $goals['Node']; // EventNode10
+    $faction       = $goals['Faction']; // FC_CORPUS
+    $desc          = $goals['Desc']; // /Lotus/Language/Menu/CorpusRazorbackProject
+    $icon          = $goals['Icon']; // /Lotus/Interface/Icons/Npcs/Corpus/ArmoredJackal.png
+    $regiondrops   = $goals['RegionDrops']; // array();
+    $archwingdrops = $goals['ArchwingDrops']; // array( '/Lotus/Types/Items/MiscItems/RazorbackCipherPartPickup' );
+    $scoreloctag   = $goals['ScoreLocTag']; // /Lotus/Language/Menu/RazorbackArmadaScoreHint
+    $tag           = $goals['Tag']; // FriendlyFireTacAlert
+
+    $missioninfo = $goals['MissionInfo'];
+    $mission_type             = $missioninfo['missionType']; // MT_ASSASSINATION
+    $mission_faction          = $missioninfo['faction']; // FC_CORPUS
+    $mission_location         = $missioninfo['location']; // EventNode10
+    $mission_leveloverride    = $missioninfo['levelOverride']; // /Lotus/Levels/Proc/Corpus/CorpusShipArmoredJackalBoss
+    $mission_minlevel         = $missioninfo['minEnemyLevel']; // 20
+    $mission_maxlevel         = $missioninfo['maxEnemyLevel']; // 30
+    $mission_archwingrequired = $missioninfo['archwingRequired']; // false
+    $mission_requireditems    = $missioninfo['requiredItems']; // array( /Lotus/StoreItems/Types/Restoratives/Consumable/RazorbackCipher );
+    $mission_consumerequireditems = $missioninfo['consumeRequiredItems']; // true
+    $mission_missionreward    = $missioninfo['missionReward']; // array( 'randomizedItems' => 'razorbackRewardManifest' );
+    $mission_vipagent         = $missioninfo['vipAgent']; // /Lotus/Types/Enemies/Corpus/SpecialEvents/ArmoredJackal/ArmoredJackalAgent
+    $mission_leadersalwaysallowed = $missioninfo['leadersAlwaysAllowed']; // true
+    $mission_goaltag          = $missioninfo['goalTag']; // FriendlyFireTacAlert
+    $mission_levelauras       = $missioninfo['levelAuras']; // array( '/Lotus/Upgrades/Mods/DirectorMods/BossDropReductionAura' );
+    $mission_icon             = $missioninfo['icon']; // /Lotus/Interface/Icons/Events/RazorbackArmada.png
+
+    $hubevent = $goals['ContinuousHubEvent'];
+    $hubevent_transmission   = $hubevent['Transmission']; // /Lotus/Sounds/Dialog/HubAnnouncements/NefAnyoMoaEventPropaganda
+    $hubevent_activation     = $hubevent['Activation']['$date']['$numberLong'];
+    $hubevent_expiry         = $hubevent['Expiry']['$date']['$numberLong'];
+    $hubevent_repeatinterval = $hubevent['RepeatInterval']; // 1800
+
+    $reward_credit = $goals['Reward']['credits']; // 200000
+    $reward_items  = $goals['Reward']['items']; // array( /Lotus/StoreItems/Types/Items/MiscItems/OrokinCatalyst );
+
+    $activation = date('Y-m-d H:i:s', $activation / 1000 );
+    $expiry     = date('Y-m-d H:i:s', $expiry / 1000 );
+
+    $region = '';
+    if ( ( isset( $solnodelist[$node] ) ) && ( isset( $solnodelist[$node]['region'] ) ) ) {
+        $region = $solnodelist[$node]['region'];
+    }
+    if ( isset( $regionlist[ $region ] ) ) {
+        $region = $regionlist[ $region ];
+    }
+
+    $target = 'unknowntarget';
+    switch( $desc ) {
+    case '/Lotus/Language/Menu/CorpusRazorbackProject':
+        $target = 'Razorback Armada';
+        break;
+    case '/Lotus/Language/G1Quests/FomorianRevengeBattleName':
+        $target = 'バロール・フォーモリアン';
+        break;
+    case '/Lotus/Language/G1Quests/HeatFissuresEventName':
+        $target = 'サーミアの裂け目';
+        return '';	// サーミアは常設みたいなものなので無視 tenno.toolsもそうしてる
+        break;
+    default:
+        break;
+    }
+
+    $retstr = sprintf( '%s %s～%s', $target, $activation, $expiry ) . PHP_EOL;
+    $rewardstr = '';
+    if ( $reward_credit > 0 ) {
+        $rewardstr .= sprintf( '%s credit', number_format( $reward_credit ) );
+        if ( $reward_credit >= 2 ) {
+            $rewardstr .= 's';
+        }
+    }
+    foreach( $reward_items as $v ) {
+        if ( $rewardstr != '' ) $rewardstr .= ', ';
+        $item = $v;
+        if ( isset( $itemtranslatelist[ $item ] ) ) {
+            $item = $itemtranslatelist[ $item ];
+        }
+        $rewardstr .= $item;
+    }
+    if ( $rewardstr != '' ) {
+        $retstr .= $rewardstr . PHP_EOL;
+    }
+
+    return $retstr;
+}
+
+function create_fomorianhash( $goals ) {
+
+    $oid           = $goals['_id']['$oid'];
+    $activation    = $goals['Activation']['$date']['$numberLong'];
+    $expiry        = $goals['Expiry']['$date']['$numberLong'];
+    $node          = $goals['Node']; // EventNode10
+    $desc          = $goals['Desc']; // /Lotus/Language/Menu/CorpusRazorbackProject
+    $reward_credit = $goals['Reward']['credits']; // 200000
+    $reward_items  = $goals['Reward']['items']; // array( /Lotus/StoreItems/Types/Items/MiscItems/OrokinCatalyst );
+
+    $arr = array(
+        'oid'           => $oid,
+        'activation'    => $activation,
+        'expiry'        => $expiry,
+        'node'          => $node,
+        'desc'          => $desc,
+        'reward_credit' => $reward_credit,
+        'reward_credit' => $reward_items
+    );
+
+    return hash( 'sha256', json_encode( $arr ) );
+}
+
 function parse_sentientship( $sentient ) {
 
     $locationlist = array(

@@ -1,0 +1,7 @@
+// フォーモリアン船 & razorback 到来情報の送り先
+// send url when fomorian & razorback event arrived
+// put your discord channel webhook url
+// require '/' to '\/' escape sequence
+[
+    "https:\/\/discordapp.com\/api\/webhooks\/999999999999999999\/********************************************************************"
+]
