@@ -134,6 +134,38 @@ function parse_sortie( $sortie ) {
     return $retstr;
 }
 
+function create_sortiehash( $sortie ) {
+    $boss     = $sortie['Boss'];
+    $datefrom = $sortie['Activation']['$date']['$numberLong'];
+    $dateend  = $sortie['Expiry']['$date']['$numberLong'];
+
+    $var = array();
+
+    $variant = $sortie['Variants'];
+    foreach( $variant as $v2 ) {
+        $node     = $v2['node'];
+        $mission  = $v2['missionType'];
+        $modifier = $v2['modifierType'];
+
+        $var[] = array(
+            'node'     => $node,
+            'mission'  => $mission,
+            'modifier' => $modifier
+        );
+
+    }
+
+    $arr = array(
+        'boss'     => $boss,
+        'datefrom' => $datefrom,
+        'dateend'  => $dateend,
+        'variant'  => $var
+    );
+
+    return hash( 'sha256', json_encode( $arr ) );
+
+}
+
 function parse_alert( $alert ) {
     global $missiontypelist, $solnodelist, $itemtranslatelist, $alertweaponmodifierlist, $timezone;
 

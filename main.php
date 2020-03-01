@@ -36,7 +36,7 @@ function main() {
 
     foreach( $json['Sorties'] as $v ) {	// ソーティ
         if ( isset( $v['_id']['$oid'] ) ) {
-            $update_check_hash = 'sortie' . $v['_id']['$oid'];
+            $update_check_hash = 'sortie' . create_sortiehash( $v );
             if ( !isset( $eventids_old[ $update_check_hash ] ) ) {
                 $sortie_text .= parse_sortie( $v );
             }
