@@ -202,7 +202,8 @@ function parse_alert( $alert ) {
 
     $rewardlist = parse_reward( $alert['MissionInfo']['missionReward'] );
     foreach( $rewardlist as $v ) {
-        $reward .= $v . "\n";
+        if ( $reward != '' ) $reward .= ', ';
+        $reward .= $v;
     }
 
     if ( isset( $missiontypelist[ $mission ] ) ) {
