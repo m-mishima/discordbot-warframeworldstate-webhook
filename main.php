@@ -11,7 +11,7 @@ $eventids_old = array();	// イベント更新チェック用の、旧イベン�
 function main() {
 
     global $worldstateurl, $eventids_old;
-    global $webhookurl_sortie, $webhookurl_fissure, $webhookurl_nicefissure, $webhookurl_niceinvasion, $webhookurl_acolyte, $webhookurl_fomorian, $webhookurl_sentientship, $webhookurl_devel;
+    global $webhookurl_sortie, $webhookurl_fissure, $webhookurl_nicefissure, $webhookurl_niceinvasion, $webhookurl_acolyte, $webhookurl_goals, $webhookurl_sentientship, $webhookurl_devel;
     $eventids_new = array();
 
     $sortie_text = '';
@@ -23,7 +23,7 @@ function main() {
     $niceinvasion_text = '';
     $sentientship_text = '';
     $acolyte_text = '';
-    $fomorian_text = '';
+    $goals_text = '';
 
     readconfig();
 
@@ -114,11 +114,11 @@ function main() {
         }
     }
 
-    foreach( $json['Goals'] as $v ) {	// fomorian & razorback
+    foreach( $json['Goals'] as $v ) {	// fomorian, razorback, thermia, ghoul
         if ( isset( $v['_id']['$oid'] ) ) {
-            $update_check_hash = 'fomorian' . create_fomorianhash( $v );
+            $update_check_hash = 'goals' . create_goalshash( $v );
             if ( !isset( $eventids_old[ $update_check_hash ] ) ) {
-                $fomorian_text .= parse_fomorian( $v );
+                $goals_text .= parse_goals( $v );
             }
             $eventids_new[ $update_check_hash ] = 'checked';
         }
@@ -172,9 +172,9 @@ function main() {
         sendmessageviawebhook( $webhookurl_acolyte, $acolyte_text );
         echo $acolyte_text . PHP_EOL;
     }
-    if ( $fomorian_text != '' ) {
-        sendmessageviawebhook( $webhookurl_fomorian, $fomorian_text );
-        echo $fomorian_text . PHP_EOL;
+    if ( $goals_text != '' ) {
+        sendmessageviawebhook( $webhookurl_goals, $goals_text );
+        echo $goals_text . PHP_EOL;
     }
 
 }

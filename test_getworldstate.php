@@ -20,7 +20,7 @@ function main() {
     $invasions_text = '';
     $sentientship_text = '';
     $acolyte_text = '';
-    $fomorian_text = '';
+    $goals_text = '';
 
     readconfig();
 
@@ -67,8 +67,8 @@ function main() {
         $acolyte_text .= parse_acolyte( $v );
     }
 
-    foreach( $json['Goals'] as $v ) {	// fomorian & razorback
-        $fomorian_text .= parse_fomorian( $v );
+    foreach( $json['Goals'] as $v ) {	// fomorian, razorback, thermia, ghoul
+        $goals_text .= parse_goals( $v );
     }
 
     if ( isset( $json['Tmp'] ) ) {
@@ -83,7 +83,7 @@ function main() {
     echo $nightwave_text . PHP_EOL;
     echo $invasions_text . PHP_EOL;
     echo $acolyte_text . PHP_EOL;
-    echo $fomorian_text . PHP_EOL;
+    echo $goals_text . PHP_EOL;
     echo $sentientship_text . PHP_EOL;
 
 }

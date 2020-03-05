@@ -15,7 +15,7 @@ function readconfig() {
                        'webhookurl_nicefissure',
                        'webhookurl_niceinvasion',
                        'webhookurl_acolyte',
-                       'webhookurl_fomorian',
+                       'webhookurl_goals',
                        'webhookurl_sentientship',
                        'webhookurl_devel',
                        'itemtranslatelist',

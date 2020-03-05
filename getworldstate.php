@@ -444,32 +444,71 @@ function create_acolytehash( $acolyte ) {
     return hash( 'sha256', json_encode( $arr ) );
 }
 
-function parse_fomorian( $goals ) {
-    global $solnodelist, $regionlist, $itemtranslatelist, $timezone;
+function parse_goals( $goals ) {
 
-    if ( $goals['Desc'] == '/Lotus/Language/G1Quests/HeatFissuresEventName' ) {
-        // サーミアは常設みたいなものなので無視 tenno.toolsもそうしてる
-        return '';
+    $retstr = '';
+
+    // 各イベント毎にデータ構造が違うので、別処理
+    $desc = $goals['Desc'];
+    switch( $desc ) {
+    case '/Lotus/Language/Menu/CorpusRazorbackProject':
+        $retstr = parse_goals_razorback( $goals );
+        break;
+    case '/Lotus/Language/G1Quests/FomorianRevengeBattleName':
+        $retstr = parse_goals_fomorian( $goals );
+        break;
+    case '/Lotus/Language/G1Quests/HeatFissuresEventName':
+        $retstr = parse_goals_thermia( $goals );
+        break;
+    case '/Lotus/Language/GameModes/RecurringGhoulAlert':
+        $retstr = parse_goals_ghoul( $goals );
+        break;
+    default:
+        $retstr = 'unknown goals event';
+        break;
     }
+
+    return $retstr;
+}
+
+function create_goalshash( $goals ) {
+
+    $oid           = $goals['_id']['$oid'];
+    $activation    = $goals['Activation']['$date']['$numberLong'];
+    $expiry        = $goals['Expiry']['$date']['$numberLong'];
+    $desc          = $goals['Desc']; // /Lotus/Language/Menu/CorpusRazorbackProject
+
+    $arr = array(
+        'oid'           => $oid,
+        'activation'    => $activation,
+        'expiry'        => $expiry,
+        'desc'          => $desc
+    );
+
+    return hash( 'sha256', json_encode( $arr ) );
+}
+
+function parse_goals_razorback( $goals ) {
+    global $solnodelist, $regionlist, $itemtranslatelist, $timezone;
 
     date_default_timezone_set( $timezone );
 
     $retstr = '';
 
-    $oid           = $goals['_id']['$oid'];
+    $oid           = $goals['_id']['$oid']; // 5e4d5221e8fa3c4737fa543c
     $fomorian      = $goals['Fomorian']; // true
     $activation    = $goals['Activation']['$date']['$numberLong'];
     $expiry        = $goals['Expiry']['$date']['$numberLong'];
     $countnum      = $goals['Count']; // 0
     $goal          = $goals['Goal']; // 3
-    $healthpct     = $goals['HealthPct']; // 0.9334036
+    $healthpct     = $goals['HealthPct']; // 0.9345284
     $victimnode    = $goals['VictimNode']; // ErisHUB
     $personal      = $goals['Personal']; // true
     $best          = $goals['Best']; // false
     $scorevar      = $goals['ScoreVar']; // ""
     $scoremaxtag   = $goals['ScoreMaxTag']; // ""
     $scoretagblock = $goals['ScoreTagBlocksGuildTierChanges']; // false
-    $success       = $goals['ScoreMaxTag']; // 0
+    $success       = $goals['Success']; // 0
     $node          = $goals['Node']; // EventNode10
     $faction       = $goals['Faction']; // FC_CORPUS
     $desc          = $goals['Desc']; // /Lotus/Language/Menu/CorpusRazorbackProject
@@ -516,22 +555,7 @@ function parse_fomorian( $goals ) {
         $region = $regionlist[ $region ];
     }
 
-    $target = 'unknowntarget';
-    switch( $desc ) {
-    case '/Lotus/Language/Menu/CorpusRazorbackProject':
-        $target = 'Razorback Armada';
-        break;
-    case '/Lotus/Language/G1Quests/FomorianRevengeBattleName':
-        $target = 'バロール・フォーモリアン';
-        break;
-    case '/Lotus/Language/G1Quests/HeatFissuresEventName':
-        $target = 'サーミアの裂け目';
-        break;
-    default:
-        break;
-    }
-
-    $retstr = sprintf( '%s %s～%s', $target, $activation, $expiry ) . PHP_EOL;
+    $retstr = sprintf( '%s %s～%s', 'Razorback Armada', $activation, $expiry ) . PHP_EOL;
     $rewardstr = '';
     if ( $reward_credit > 0 ) {
         $rewardstr .= sprintf( '%s credit', number_format( $reward_credit ) );
@@ -554,27 +578,201 @@ function parse_fomorian( $goals ) {
     return $retstr;
 }
 
-function create_fomorianhash( $goals ) {
+function parse_goals_fomorian( $goals ) {
+    global $solnodelist, $regionlist, $itemtranslatelist, $timezone;
+
+    date_default_timezone_set( $timezone );
+
+    $retstr = '';
+
+    $oid           = $goals['_id']['$oid']; // 5e5607093cea494b1ec8c7a0
+    $fomorian      = $goals['Fomorian']; // true
+    $activation    = $goals['Activation']['$date']['$numberLong'];
+    $expiry        = $goals['Expiry']['$date']['$numberLong'];
+    $countnum      = $goals['Count']; // 0
+    $goal          = $goals['Goal']; // 1000000
+    $healthpct     = $goals['HealthPct']; // 0.9594032
+    $victimnode    = $goals['VictimNode']; // EuropaHUB
+    $personal      = $goals['Personal']; // true
+    $best          = $goals['Best']; // true
+    $scorevar      = $goals['ScoreVar']; // "FomorianEventScore"
+    $scoremaxtag   = $goals['ScoreMaxTag']; // "FomorianEventScore"
+    $scoretagblock = $goals['ScoreTagBlocksGuildTierChanges']; // false
+    $success       = $goals['Success']; // 0
+    $node          = $goals['Node']; // EventNode12
+    $faction       = $goals['Faction']; // FC_GRINEER
+    $desc          = $goals['Desc']; // /Lotus/Language/G1Quests/FomorianRevengeBattleName
+    $icon          = $goals['Icon']; // /Lotus/Materials/Emblems/SlingStone2_e.png
+    $regiondrops   = $goals['RegionDrops']; // array( /Lotus/Types/Items/MiscItems/OmegaIsotopePickup );
+    $archwingdrops = $goals['ArchwingDrops']; // array();
+    $scoreloctag   = $goals['ScoreLocTag']; // /Lotus/Language/Menu/FomorianScoreHint
+    $tag           = $goals['Tag']; // ''
+
+    $missioninfo = $goals['MissionInfo'];
+    $mission_type             = $missioninfo['missionType']; // MT_SABOTAGE
+    $mission_faction          = $missioninfo['faction']; // FC_GRINEER
+    $mission_location         = $missioninfo['location']; // EventNode12
+    $mission_leveloverride    = $missioninfo['levelOverride']; // /Lotus/Levels/Proc/Space/SpaceGrineerFomorianAssaultProcLevel
+    $mission_enemyspec        = $missioninfo['enemySpec']; // /Lotus/Types/Game/EnemySpecs/FomorianAttackSpec
+    $mission_minlevel         = $missioninfo['minEnemyLevel']; // 20
+    $mission_maxlevel         = $missioninfo['maxEnemyLevel']; // 30
+    $mission_difficulty       = $missioninfo['difficulty']; // 1
+    $mission_archwingrequired = $missioninfo['archwingRequired']; // true
+    $mission_requireditems    = $missioninfo['requiredItems']; // array( /Lotus/StoreItems/Types/Restoratives/Consumable/FomorianNegator );
+    $mission_consumerequireditems = $missioninfo['consumeRequiredItems']; // false
+    $mission_missionreward    = $missioninfo['missionReward']; // array( 'randomizedItems' => 'fomorianRewardManifest' );
+    $mission_vipagent         = $missioninfo['vipAgent']; // ''
+    $mission_leadersalwaysallowed = $missioninfo['leadersAlwaysAllowed']; // true
+    $mission_goaltag          = $missioninfo['goalTag']; // ''
+    $mission_levelauras       = $missioninfo['levelAuras']; // array();
+    $mission_icon             = $missioninfo['icon']; // /Lotus/Interface/Icons/Events/Fomorian.png
+
+    $hubevent = $goals['ContinuousHubEvent'];
+    $hubevent_transmission   = $hubevent['Transmission']; // /Lotus/Sounds/Dialog/HubAnnouncements/HekPropoganda
+    $hubevent_activation     = $hubevent['Activation']['$date']['$numberLong'];
+    $hubevent_expiry         = $hubevent['Expiry']['$date']['$numberLong'];
+    $hubevent_repeatinterval = $hubevent['RepeatInterval']; // 1800
+
+    $reward_credit = $goals['Reward']['credits']; // 200000
+    $reward_items  = $goals['Reward']['items']; // array( /Lotus/StoreItems/Types/Items/MiscItems/OrokinCatalyst );
+
+    $activation = date('Y-m-d H:i:s', $activation / 1000 );
+    $expiry     = date('Y-m-d H:i:s', $expiry / 1000 );
+
+    $region = '';
+    if ( ( isset( $solnodelist[$node] ) ) && ( isset( $solnodelist[$node]['region'] ) ) ) {
+        $region = $solnodelist[$node]['region'];
+    }
+    if ( isset( $regionlist[ $region ] ) ) {
+        $region = $regionlist[ $region ];
+    }
+
+    $retstr = sprintf( '%s %s～%s', 'バロール・フォーモリアン', $activation, $expiry ) . PHP_EOL;
+    $rewardstr = '';
+    if ( $reward_credit > 0 ) {
+        $rewardstr .= sprintf( '%s credit', number_format( $reward_credit ) );
+        if ( $reward_credit >= 2 ) {
+            $rewardstr .= 's';
+        }
+    }
+    foreach( $reward_items as $v ) {
+        if ( $rewardstr != '' ) $rewardstr .= ', ';
+        $item = $v;
+        if ( isset( $itemtranslatelist[ $item ] ) ) {
+            $item = $itemtranslatelist[ $item ];
+        }
+        $rewardstr .= $item;
+    }
+    if ( $rewardstr != '' ) {
+        $retstr .= $rewardstr . PHP_EOL;
+    }
+
+    return $retstr;
+}
+
+function parse_goals_thermia( $goals ) {
+    global $solnodelist, $regionlist, $itemtranslatelist, $timezone;
+
+    date_default_timezone_set( $timezone );
+
+    $retstr = '';
 
     $oid           = $goals['_id']['$oid'];
     $activation    = $goals['Activation']['$date']['$numberLong'];
     $expiry        = $goals['Expiry']['$date']['$numberLong'];
-    $node          = $goals['Node']; // EventNode10
-    $desc          = $goals['Desc']; // /Lotus/Language/Menu/CorpusRazorbackProject
-    $reward_credit = $goals['Reward']['credits']; // 200000
-    $reward_items  = $goals['Reward']['items']; // array( /Lotus/StoreItems/Types/Items/MiscItems/OrokinCatalyst );
+    $node          = $goals['Node']; // SolNode129
+    $scorevar      = $goals['ScoreVar']; // FissuresClosed
+    $scoreloctag   = $goals['ScoreLocTag']; // /Lotus/Language/G1Quests/HeatFissuresEventScore
 
-    $arr = array(
-        'oid'           => $oid,
-        'activation'    => $activation,
-        'expiry'        => $expiry,
-        'node'          => $node,
-        'desc'          => $desc,
-        'reward_credit' => $reward_credit,
-        'reward_credit' => $reward_items
-    );
+    $countnum      = $goals['Count']; // 0
+    $healthpct     = $goals['HealthPct']; // 0
+    $regions       = $goals['Regions']; // array( 1 );
+    $desc          = $goals['Desc']; // /Lotus/Language/G1Quests/HeatFissuresEventName
+    $tooltip       = $goals['ToolTip']; // /Lotus/Language/G1Quests/HeatFissuresEventDesc
+    $optionalinmission = $goals['OptionalInMission']; // true
+    $tag           = $goals['Tag']; // HeatFissure
+    foreach( $goals['UpgradeIds'] as $v ) {
+        $oid = $v['$oid']; // 5e58221912e7b6cb219bdcfe
+    }
+    $personal      = $goals['Personal']; // true
+    $goal          = $goals['Goal']; // 100
 
-    return hash( 'sha256', json_encode( $arr ) );
+    $reward_credit       = $goals['Reward']['credits']; // 0
+    $reward_xp           = $goals['Reward']['xp']; // 0
+    $reward_items        = $goals['Reward']['items']; // array( /Lotus/StoreItems/Weapons/Corpus/LongGuns/CrpBFG/Vandal/VandalCrpBFG );
+    $reward_counteditems = $goals['Reward']['countedItems']; // array();
+
+    $interimgoals[0] = $goals['InterimGoals'][0]; // 5
+    $interimgoals[1] = $goals['InterimGoals'][1]; // 25
+    $interimgoals[2] = $goals['InterimGoals'][2]; // 50
+    $interimgoals[3] = $goals['InterimGoals'][3]; // 75
+
+    foreach( $goals['InterimRewards'] as $v ) { // 各中間報酬(4つ)
+        $interimreward_credits      = $v['credits']; // 0
+        $interimreward_xp           = $v['xp']; // 0
+        $interimreward_items        = $v['items']; // array( /Lotus/StoreItems/Upgrades/Skins/Clan/OrbBadgeItem );
+        $inrerimreward_counteditems = $v['countedItems']; // array();
+    }
+
+    $activation = date('Y-m-d H:i:s', $activation / 1000 );
+    $expiry     = date('Y-m-d H:i:s', $expiry / 1000 );
+
+    $retstr = sprintf( '%s %s～%s', 'サーミアの裂け目', $activation, $expiry ) . PHP_EOL;
+
+    return $retstr;
+}
+
+function parse_goals_ghoul( $goals ) {
+    global $solnodelist, $regionlist, $itemtranslatelist, $timezone;
+
+    date_default_timezone_set( $timezone );
+
+    $retstr = '';
+
+    $oid           = $goals['_id']['$oid'];
+    $activation    = $goals['Activation']['$date']['$numberLong'];
+    $expiry        = $goals['Expiry']['$date']['$numberLong'];
+    $healthpct     = $goals['HealthPct']; // 1
+    $victimnode    = $goals['VictimNode']; // SolNode228
+    $regions       = $goals['Regions']; // array( 2 );
+    $success       = $goals['Success']; // 0
+    $desc          = $goals['Desc']; // /Lotus/Language/GameModes/RecurringGhoulAlert
+    $tooltip       = $goals['Desc']; // /Lotus/Language/GameModes/RecurringGhoulAlertDesc
+    $icon          = $goals['Icon']; // /Lotus/Interface/Icons/Categories/IconGhouls256.png
+    $tag           = $goals['Tag']; // GhoulEmergence
+
+	$jobs = $goals['Jobs']; // 開催中のbounty情報
+    foreach( $jobs as $v ) { // lv15-25 lv40-50 の二つ
+	    $jobtype       = $v['jobType']; // /Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyRes
+		$rewards       = $v['rewards']; // /Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/GhoulBountyTableARewards
+		$masteryreq    = $v['masteryReq']; // 1
+		$minenemylevel = $v['minEnemyLevel']; // 15
+		$maxenemylevel = $v['maxEnemyLevel']; // 25
+		$xpamounts[0]  = $v['xpAmounts'][0]; // 330
+		$xpamounts[1]  = $v['xpAmounts'][1]; // 330
+		$xpamounts[2]  = $v['xpAmounts'][2]; // 330
+		$xpamounts[3]  = $v['xpAmounts'][3]; // 480
+    }
+    $jobpreviousversion = $goals['JobPreviousVersion']['$oid']; // 5e6125495d3ec16acecb3cd8
+    $previousjobs = $goals['PreviousJobs'];
+    foreach( $jobs as $v ) { // lv15-25 lv40-50 の二つ
+	    $jobtype       = $v['jobType']; // /Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyHunt
+		$rewards       = $v['rewards']; // /Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/GhoulBountyTableARewards
+		$masteryreq    = $v['masteryReq']; // 1
+		$minenemylevel = $v['minEnemyLevel']; // 15
+		$maxenemylevel = $v['maxEnemyLevel']; // 25
+		$xpamounts[0]  = $v['xpAmounts'][0]; // 280
+		$xpamounts[1]  = $v['xpAmounts'][1]; // 280
+		$xpamounts[2]  = $v['xpAmounts'][2]; // 280
+		$xpamounts[3]  = $v['xpAmounts'][3]; // 410
+    }
+
+    $activation = date('Y-m-d H:i:s', $activation / 1000 );
+    $expiry     = date('Y-m-d H:i:s', $expiry / 1000 );
+
+    $retstr = sprintf( '%s %s～%s', 'グール粛清', $activation, $expiry ) . PHP_EOL;
+
+    return $retstr;
 }
 
 function parse_sentientship( $sentient ) {
