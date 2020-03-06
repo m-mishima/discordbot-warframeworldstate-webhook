@@ -464,7 +464,7 @@ function parse_goals( $goals ) {
         $retstr = parse_goals_ghoul( $goals );
         break;
     default:
-        $retstr = 'unknown goals event';
+        $retstr = parse_goals_unknown( $goals );
         break;
     }
 
@@ -556,21 +556,13 @@ function parse_goals_razorback( $goals ) {
     }
 
     $retstr = sprintf( '%s %s～%s', 'Razorback Armada', $activation, $expiry ) . PHP_EOL;
+    $rewardlist = parse_reward( $goals['Reward'] );
     $rewardstr = '';
-    if ( $reward_credit > 0 ) {
-        $rewardstr .= sprintf( '%s credit', number_format( $reward_credit ) );
-        if ( $reward_credit >= 2 ) {
-            $rewardstr .= 's';
-        }
-    }
-    foreach( $reward_items as $v ) {
+    foreach( $rewardlist as $v ) {
         if ( $rewardstr != '' ) $rewardstr .= ', ';
-        $item = $v;
-        if ( isset( $itemtranslatelist[ $item ] ) ) {
-            $item = $itemtranslatelist[ $item ];
-        }
-        $rewardstr .= $item;
+        $rewardstr .= $v;
     }
+
     if ( $rewardstr != '' ) {
         $retstr .= $rewardstr . PHP_EOL;
     }
@@ -648,21 +640,13 @@ function parse_goals_fomorian( $goals ) {
     }
 
     $retstr = sprintf( '%s %s～%s', 'バロール・フォーモリアン', $activation, $expiry ) . PHP_EOL;
+    $rewardlist = parse_reward( $goals['Reward'] );
     $rewardstr = '';
-    if ( $reward_credit > 0 ) {
-        $rewardstr .= sprintf( '%s credit', number_format( $reward_credit ) );
-        if ( $reward_credit >= 2 ) {
-            $rewardstr .= 's';
-        }
-    }
-    foreach( $reward_items as $v ) {
+    foreach( $rewardlist as $v ) {
         if ( $rewardstr != '' ) $rewardstr .= ', ';
-        $item = $v;
-        if ( isset( $itemtranslatelist[ $item ] ) ) {
-            $item = $itemtranslatelist[ $item ];
-        }
-        $rewardstr .= $item;
+        $rewardstr .= $v;
     }
+
     if ( $rewardstr != '' ) {
         $retstr .= $rewardstr . PHP_EOL;
     }
@@ -774,6 +758,39 @@ function parse_goals_ghoul( $goals ) {
 
     return $retstr;
 }
+
+function parse_goals_unknown( $goals ) {
+    global $solnodelist, $regionlist, $itemtranslatelist, $timezone;
+
+    date_default_timezone_set( $timezone );
+
+    $retstr = '';
+
+    $oid           = $goals['_id']['$oid'];
+    $activation    = $goals['Activation']['$date']['$numberLong'];
+    $expiry        = $goals['Expiry']['$date']['$numberLong'];
+    $desc          = $goals['Desc']; // /Lotus/Language/GameModes/RecurringGhoulAlert
+
+    $activation = date('Y-m-d H:i:s', $activation / 1000 );
+    $expiry     = date('Y-m-d H:i:s', $expiry / 1000 );
+
+    $retstr = sprintf( '%s %s～%s', 'unknown goals event ' . $desc, $activation, $expiry ) . PHP_EOL;
+    $rewardlist = parse_reward( $goals['Reward'] );
+    $rewardstr = '';
+    foreach( $rewardlist as $v ) {
+        if ( $rewardstr != '' ) $rewardstr .= ', ';
+        $rewardstr .= $v;
+    }
+
+    if ( $rewardstr != '' ) {
+        $retstr .= $rewardstr . PHP_EOL;
+    }
+
+
+    return $retstr;
+}
+
+
 
 function parse_sentientship( $sentient ) {
 
