@@ -2,11 +2,23 @@
 [
     {
 	"Item": "\/Lotus\/StoreItems\/Types\/Recipes\/Components\/FormaAuraBlueprint",
-	// action: accept に到達すると、いい亀裂として認められる
+	// action: accept に到達すると、いい侵略ミッションとして認められる
 	"action": "accept"
     },
     {
 	// Item と Reward は同じ動作
+	"Reward": "\/Lotus\/StoreItems\/Types\/Items\/MiscItems\/FormaAura",
+	"action": "accept"
+    },
+    {
+	"Reward": "\/Lotus\/StoreItems\/Types\/Recipes\/Components\/FormaStanceBlueprint",
+	"action": "accept"
+    },
+    {
+	"Reward": "\/Lotus\/StoreItems\/Types\/Items\/MiscItems\/FormaStance",
+	"action": "accept"
+    },
+    {
 	"Reward": "\/Lotus\/StoreItems\/Types\/Recipes\/Components\/FormaBlueprint",
 	"action": "accept"
     },
