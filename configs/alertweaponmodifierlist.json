@@ -2,5 +2,6 @@
 {
     "\/Lotus\/Weapons\/Tenno\/Melee\/PlayerMeleeWeapon": "melee only",
     "\/Lotus\/Weapons\/Tenno\/Pistol\/LotusPistol": "pistol only",
+    "\/Lotus\/Weapons\/Tenno\/Rifle\/LotusAssaultRifle": "assault rifle only",
     "\/Lotus\/Weapons\/Tenno\/Shotgun\/LotusShotgun" : "shotgun only"
 }
